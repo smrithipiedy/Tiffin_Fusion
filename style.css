@@ -255,3 +255,250 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+
+/**************************/
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+#scrollToTopBtn i {
+  font-size: 20px;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  #scrollToTopBtn {
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+  }
+
+  #scrollToTopBtn i {
+      font-size: 18px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+  #scrollToTopBtn {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+  }
+
+  #scrollToTopBtn i {
+      font-size: 16px;
+  }
+}
+
+
+
+/************************************************************/
+/* Contact Us Section Styling */
+.contact-us {
+  background-image: url('Utils/contact us2.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h2 {
+  font-size: 36px;
+  color: #fff;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9); /* Transparent background for readability */
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form select,
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background-color: #c0392b;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-box {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #333;
+}
+
+.info-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.info-box a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form, .contact-info {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+/**********************************************************/
+/* Footer Styling */
+footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  font-family: 'Arial', sans-serif;
+  color: #6c757d;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.footer-section {
+  margin: 20px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons li a {
+  font-size: 20px;
+  color: #6c757d;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #e9ecef;
+  font-size: 14px;
+}
+
