@@ -320,11 +320,181 @@ html {
   }
 }
 
+/***********************************************************/
+/* Blog section styling */
+.blog-section {
+  grid-column: span 2;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.blog-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.blog-section p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Main section styling */
+.who-we-are {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  text-align: left;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+/* Content styling */
+.content {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Title and paragraph */
+.who-we-are h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.red-line {
+  width: 60px;
+  height: 3px;
+  background: red;
+  margin: 10px auto;
+  animation: animateLine 1.5s ease-in;
+}
+
+
+/* Animation for red line */
+@keyframes animateLine {
+  0% {width: 0;}
+  100% {width: 60px;}
+}
+
+.who-we-are p {
+  font-size: 1.2em;
+  color: #666;
+  margin: 20px 0;
+}
+
+/* Image styling */
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 80%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Cards styling */
+.cards-container {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card styling */
+.card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Hover effect for card */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cards-container {
+  display: flex; /* Flexbox for card layout */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards */
+}
+
+.card {
+  background: #fff; /* Background color for cards */
+  border: 1px solid #ddd; /* Border for cards */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding inside cards */
+  max-width: 300px; /* Max width of the cards */
+  text-align: center; /* Center text in cards */
+  transition: transform 0.3s; /* Animation on hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.read-more-button {
+  display: inline-block; /* Inline block for button */
+  margin-top: 10px; /* Space above button */
+  padding: 10px 15px; /* Padding inside button */
+  background: #007BFF; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners for button */
+  transition: background-color 0.3s; /* Animation for button background */
+}
+
+.read-more-button:hover {
+  background: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .who-we-are {
+      grid-template-columns: 1fr;
+  }
+  .cards-container {
+      grid-template-columns: 1fr;
+  }
+  .image-container img {
+      max-width: 100%;
+  }
+}
+
+
 
 
 /************************************************************/
 /* Contact Us Section Styling */
-.contact-us {
+#contact-us {
   background-image: url('Utils/contact us2.jpg'); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
