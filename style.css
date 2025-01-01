@@ -10,17 +10,26 @@ body {
   }
   
   .navbar-nav {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    width: 100%; /* Ensure it fills the container */
+    align-items: center; /* Vertically center all items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove padding */
+}
+
+.nav-item {
+    margin: 0 5px; /* Reduce the space between the items */
+    padding: 0; /* Remove padding */
 }
 
 .nav-item a {
     color: black;
     text-transform: uppercase;
-    font-weight: bold;
-    position: relative; 
-    padding-bottom: 5px;
+    font-weight: 600; /* Lighten the font weight */
+    font-size: 14px; /* Ensure uniform font size for all links */
+    position: relative;
+    padding: 8px 12px; /* Consistent padding for each link */
     transition: color 0.3s ease;
 }
 
@@ -28,17 +37,111 @@ body {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px; 
-    left: 50%; 
+    height: 2px;
+    left: 50%;
     bottom: 0;
     background-color: red;
-    transition: width 0.3s ease, left 0.3s ease; 
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-item a:hover::after {
-    width: 100%; 
-    left: 0; 
+    width: 100%;
+    left: 0;
 }
+
+.navbar-toggler {
+    margin-left: auto; /* Align the toggler to the right for mobile view */
+}
+
+
+
+
+/* sign in css */
+
+
+
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px; /* Space between forms */
+  transition: transform 0.3s ease-in-out;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #45a049;
+}
+
+.signup-option, .signin-option {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-option a, .signin-option a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-box {
+  display: none;
+}
+
+.auth-container.show-signup .signin-box {
+  display: none;
+}
+
+.auth-container.show-signup .signup-box {
+  display: block;
+}
+
+
+
 
   
   /* Hero Section */
