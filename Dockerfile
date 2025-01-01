@@ -1,18 +1,17 @@
-# Base image for Node.js
-FROM node:18-slim
+# Use the official Nginx image
+FROM nginx:alpine
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-# Copy the entire application directory into the container
+# Remove the default Nginx static assets
+RUN rm -rf ./*
+
+# Copy the static files from your project into the container
 COPY . .
 
-# Install any dependencies if required (assuming a Node.js application)
-# Remove the following line if it's purely a static web application
-RUN npm install
+# Expose port 80 for HTTP
+EXPOSE 80
 
-# Expose the default port if the app uses an HTTP server (e.g., Express in app.js)
-EXPOSE 3000
-
-# Command to start the application (adjust if using a static site or different framework)
-CMD ["node", "app.js"]
+# Start the Nginx server
+CMD ["nginx", "-g", "daemon off;"]
