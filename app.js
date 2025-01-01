@@ -27,6 +27,14 @@ function scrollFunction() {
     }
 }
 
+
+//sign in button js
+
+// Show the Sign In or Sign Up form when clicking Sign In button
+
+  
+  
+
 // Attach the debounced scroll function to the window scroll event
 window.addEventListener('scroll', debounce(scrollFunction, 20));
 
