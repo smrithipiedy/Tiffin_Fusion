@@ -1,32 +1,18 @@
-# Stage 1: Build the Node.js application
-FROM node:18-slim AS build
+# Base image for Node.js
+FROM node:18-slim
 
-# Set the working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if available)
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application files
+# Copy the entire application directory into the container
 COPY . .
 
-# Build the application (adjust command if using a framework like React, Vue, or Next.js)
-RUN npm run build
+# Install any dependencies if required (assuming a Node.js application)
+# Remove the following line if it's purely a static web application
+RUN npm install
 
-# Stage 2: Serve the application with Nginx
-FROM nginx:alpine AS production
+# Expose the default port if the app uses an HTTP server (e.g., Express in app.js)
+EXPOSE 3000
 
-# Copy the built static files from the previous stage
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Copy custom Nginx configuration (optional, if needed)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose the default Nginx port
-EXPOSE 80
-
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Command to start the application (adjust if using a static site or different framework)
+CMD ["node", "app.js"]
