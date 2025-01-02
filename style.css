@@ -772,13 +772,26 @@ html {
 }
 
 .contact-header {
+ 
   text-align: center;
   margin-bottom: 40px;
+   
 }
 
 .contact-header h2 {
   font-size: 36px;
-  color: #fff;
+  color: #ff0000;
+  text-align: center;
+
+  /* For modern browsers */
+  -webkit-text-stroke: 1px black; /* Black border with 1px width */
+  
+  /* Fallback for older browsers using text-shadow */
+  text-shadow: 
+    1px 1px 0 black,
+    -1px 1px 0 black,
+    1px -1px 0 black,
+    -1px -1px 0 black;
 }
 
 .contact-container {
