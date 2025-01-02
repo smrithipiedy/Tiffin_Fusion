@@ -28,9 +28,6 @@ function scrollFunction() {
 }
 
 
-//sign in button js
-
-// Show the Sign In or Sign Up form when clicking Sign In button
 
   
   
