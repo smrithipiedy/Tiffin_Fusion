@@ -779,12 +779,13 @@ html {
 }
 
 .contact-header h2 {
+  font-family: 'Cosmic Sans MS', cursive, sans-serif;
   font-size: 36px;
-  color: #ff0000;
+  color: #f0f0f0;
   text-align: center;
 
   /* For modern browsers */
-  -webkit-text-stroke: 1px black; /* Black border with 1px width */
+  -webkit-text-stroke: 1px rgb(0, 0, 0); /* Black border with 1px width */
   
   /* Fallback for older browsers using text-shadow */
   text-shadow: 
