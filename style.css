@@ -772,13 +772,27 @@ html {
 }
 
 .contact-header {
+ 
   text-align: center;
   margin-bottom: 40px;
+   
 }
 
 .contact-header h2 {
+  font-family: 'Cosmic Sans MS', cursive, sans-serif;
   font-size: 36px;
-  color: #fff;
+  color: #f0f0f0;
+  text-align: center;
+
+  /* For modern browsers */
+  -webkit-text-stroke: 1px rgb(0, 0, 0); /* Black border with 1px width */
+  
+  /* Fallback for older browsers using text-shadow */
+  text-shadow: 
+    1px 1px 0 black,
+    -1px 1px 0 black,
+    1px -1px 0 black,
+    -1px -1px 0 black;
 }
 
 .contact-container {
