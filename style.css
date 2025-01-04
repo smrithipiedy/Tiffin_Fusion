@@ -252,6 +252,28 @@ body {
   padding: 40px 0;
 }
 
+
+
+
+/* Font styles for the headings */
+#menu h2 {
+  font-family: 'Cosmic Sans MS', cursive, sans-serif; /* Use a bold font for the heading */
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333; /* Optional: Adjust heading color */
+}
+
+/* Font styles for the circle descriptions (p tags) */
+#menu p {
+  font-family: 'Cosmic Sans MS', cursive, sans-serif; /* Use a clean font for descriptions */
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000; /* Optional: Adjust text color */
+  margin-top: 10px;
+}
+
+
 .circle-container {
   text-align: center;
   margin-bottom: 30px;
@@ -330,7 +352,7 @@ body {
 .row {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Four columns for large screens */
-  gap: 20px; /* Space between items */
+  gap: 15px; /* Space between items */
   justify-items: center;
   align-items: center;
 }
@@ -357,6 +379,8 @@ body {
   .circle i {
     font-size: 16px; /* Smaller icons for mobile */
   }
+
+
 }
 
 
