@@ -261,7 +261,7 @@ body {
   width: 60px; /* Smaller width */
   height: 60px; /* Smaller height */
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff0000, #007bff); /* Red to Blue gradient */
+  background: linear-gradient(135deg, #ff0000, #ff0000); /* Red to Blue gradient */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,7 +288,7 @@ body {
 
 .circle i {
   font-size: 20px; /* Smaller icon size */
-  color: white;
+  color: rgb(255, 255, 255);
   position: relative;
   z-index: 1;
   animation: idleBounce 2s infinite;
