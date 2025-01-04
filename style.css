@@ -1016,3 +1016,54 @@ footer {
   background-color: #e9ecef;
   font-size: 14px;
 }
+
+
+
+
+ /* Contributors Button */
+ #contributorsBtn {
+  position: fixed;
+  bottom: 115px; /* Shifted upward by half the radius (50px / 2 = 25px more) */
+  right: 40px; /* Positioned at the right corner */
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Circular shape */
+  overflow: hidden; /* Ensure image doesn't overflow the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* For smooth scaling on hover */
+}
+
+#contributorsBtn:hover {
+  transform: scale(1.1); /* Slight enlargement when hovered */
+}
+
+#contributorsBtn img {
+  width: 100%; /* Fill the entire circle with the image */
+  height: 100%; /* Fill the entire circle with the image */
+  object-fit: cover; /* Ensures the image covers the circle without distorting */
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  #contributorsBtn {
+    bottom: 105px; /* Adjusted for tablets */
+    right: 30px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+  #contributorsBtn {
+    bottom: 95px; /* Adjusted for mobile */
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
