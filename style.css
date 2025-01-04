@@ -192,6 +192,10 @@ body {
     background-color: #0056b3;
 }
 
+
+
+
+
   /* Menu Section */
   .section-menu {
     background-color: white;
@@ -244,51 +248,95 @@ body {
   
 /************************************************************************/
 
-  .section-menu {
-    padding: 40px 0;
+.section-menu {
+  padding: 40px 0;
 }
 
 .circle-container {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .circle {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%;
-    background-color: white; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    transition: transform 0.3s;
+  width: 60px; /* Smaller width */
+  height: 60px; /* Smaller height */
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff0000, #007bff); /* Red to Blue gradient */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle:before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.4), rgba(0, 123, 255, 0.2), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
 }
 
 .circle i {
-    font-size: 40px; 
-    color: #007bff; 
-    transition: transform 0.3s;
+  font-size: 20px; /* Smaller icon size */
+  color: white;
+  position: relative;
+  z-index: 1;
+  animation: idleBounce 2s infinite;
 }
 
 .circle:hover {
-    transform: scale(1.1); 
+  transform: scale(1.1);
+}
+
+.circle:hover:before {
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 .circle:hover i {
-    transform: rotate(360deg); 
+  animation: rotateAndScale 0.5s ease-in-out forwards;
+}
+
+/* Keyframes for idle bounce */
+@keyframes idleBounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-3px); /* Reduced bounce distance */
+  }
+}
+
+/* Keyframes for rotating and scaling on hover */
+@keyframes rotateAndScale {
+  0% {
+      transform: rotate(0deg) scale(1);
+  }
+  100% {
+      transform: rotate(360deg) scale(1.1); /* Smaller scaling */
+  }
 }
 
 @media (max-width: 768px) {
-    .circle {
-        width: 80px;
-        height: 80px;
-    }
+  .circle {
+      width: 50px; /* Even smaller for mobile */
+      height: 50px;
+  }
 
-    .circle i {
-        font-size: 30px; 
-    }
+  .circle i {
+      font-size: 15px; /* Smaller font size for mobile */
+  }
 }
+
 
 /******************************************************/
 /* Section Styling */
