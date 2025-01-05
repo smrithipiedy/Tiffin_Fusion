@@ -1162,3 +1162,68 @@ footer {
     height: 40px;
   }
 }
+
+.footer-section.newsletter {
+  background: linear-gradient(to right, #d4e9b9, #e8f3d6);
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Style for both images */
+.footer-section.newsletter img {
+  position: absolute;
+  width: 280px; /* Default width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  z-index: 1; /* Ensure they stay behind text and form */
+  transition: all 0.3s ease; /* Smooth transitions for resizing */
+}
+
+/* Left image */
+.tiffin-left {
+  top: 50%;
+  left: 10%; /* Adjust position */
+  transform: translateY(-50%);
+}
+
+/* Right image */
+.tiffin-right {
+  top: 50%;
+  right: 10%; /* Adjust position */
+  transform: translateY(-50%);
+}
+
+/* Content styles (text, form) */
+.footer-section.newsletter h2,
+.footer-section.newsletter p,
+.footer-section.newsletter form {
+  position: relative;
+  z-index: 2; /* Ensure content stays above images */
+}
+
+/* Responsive Design: For screens below 720px */
+@media (max-width: 920px) {
+  /* Adjust image sizes */
+  .footer-section.newsletter img {
+      width: 250px; /* Smaller images */
+      opacity: 0.5; /* Slight transparency for cleaner look */
+  }
+
+  /* Center left image */
+  .tiffin-left {
+      top: 50%; 
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Fully centered */
+  }
+
+  /* Hide right image */
+  .tiffin-right {
+      display: none;
+  }
+
+  /* Adjust padding for mobile */
+  .footer-section.newsletter {
+      padding: 30px 10px;
+  }
+}
