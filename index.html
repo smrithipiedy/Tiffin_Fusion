@@ -250,35 +250,31 @@
 
 
 
-  <section id="contact-us">
-    <div class="contact-header">
-      <h2><b>We would love to hear from you!</b></h2>
-    </div>
-    <div class="contact-container">
-      <div class="contact-form">
-
-
-        <form action="https://api.web3forms.com/submit" method="POST">
-
-          <input type="hidden" name="access_key" value="24c2d733-3b85-4b25-9d33-ee0fdb1040d8">
-      
+<section id="contact-us">
+  <div class="contact-header">
+    <h2><b>We would love to hear from you!</b></h2>
+  </div>
+  <div class="contact-container">
+    <div class="contact-form">
+      <form id="feedbackForm">
+        <!-- Web3Forms access key -->
+        <input type="hidden" name="access_key" value="24c2d733-3b85-4b25-9d33-ee0fdb1040d8">
         
-        <form id="feedbackForm" onsubmit="return false">
-          <select name="query" required>
-            <option value="" disabled selected>How can we help you?*</option>
-            <option value="order">Issue with an Order</option>
-            <option value="feedback">Feedback</option>
-            <option value="other">Other Queries</option>
-          </select>
-          <input type="text" name="name" placeholder="Full Name*" required>
-          <input type="email" name="email" placeholder="Email Address*" required>
-          <input type="text" name="mobile" placeholder="Mobile Number (optional)">
-          <textarea name="message" placeholder="Type text*" required></textarea>
-          <button type="submit" class="submit-btn" onclick="submitFeedback()">Submit Feedback</button>
-        </form>
-      </div>
-      </div>
-  </section>
+        <select name="query" required>
+          <option value="" disabled selected>How can we help you?*</option>
+          <option value="order">Issue with an Order</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other Queries</option>
+        </select>
+        <input type="text" name="name" placeholder="Full Name*" required>
+        <input type="email" name="email" placeholder="Email Address*" required>
+        <input type="text" name="mobile" placeholder="Mobile Number (optional)">
+        <textarea name="message" placeholder="Type text*" required></textarea>
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 
 
