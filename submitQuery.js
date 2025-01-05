@@ -1,67 +1,81 @@
-var formContainer = document.getElementsByClassName("contact-form")[0] // Container Where the form is located
+// JavaScript to handle form submission and feedback
 
+// Target the form and the container where the form is located
+var form = document.getElementById("feedbackForm");
+var formContainer = document.getElementsByClassName("contact-form")[0];
+
+// Function to handle a successful form submission
 function ajaxSuccess() {
-    formContainer.innerHTML = `
+  formContainer.innerHTML = `
     <div class="alert alert-success" role="alert">
-        Your Query Has Been Submitted, Thank you! <br>
-        Our Team Will Reach Out To You Soon
+      Your query has been submitted successfully! <br>
+      Our team will get back to you soon.
     </div>
-    <button type="button" class="btn btn-info" onclick="restartFeedback()">Add Another Query</button>
-
-    `
+    <button type="button" class="btn btn-info" onclick="restartFeedback()">Submit Another Query</button>
+  `;
 }
+
+// Function to handle an error during form submission
 function ajaxError() {
-    formContainer.innerHTML = `
+  formContainer.innerHTML = `
     <div class="alert alert-danger" role="alert">
-        Uh-oh! We Are Having Trouble Reaching Our Systems <br>
-        Please Try Again Later
+      Something went wrong! Please try again later.
     </div>
     <button type="button" class="btn btn-info" onclick="restartFeedback()">Try Again</button>
-
-    `
+  `;
 }
+
+// Function to reload the form for a new submission
 function restartFeedback() {
-    formContainer.innerHTML = `
-        <form id="feedbackForm" onsubmit="return false">
-          <select name="query" required>
-            <option value="" disabled selected>How can we help you?*</option>
-            <option value="order">Issue with an Order</option>
-            <option value="feedback">Feedback</option>
-            <option value="other">Other Queries</option>
-          </select>
-          <input type="text" name="name" placeholder="Full Name*" required>
-          <input type="email" name="email" placeholder="Email Address*" required>
-          <input type="text" name="mobile" placeholder="Mobile Number (optional)">
-          <textarea name="message" placeholder="Type text*" required></textarea>
-          <button type="submit" class="submit-btn" onclick="submitFeedback()">Submit Feedback</button>
-        </form>
-    `
+  formContainer.innerHTML = `
+    <form id="feedbackForm">
+      <input type="hidden" name="access_key" value="9038a00f-a336-423e-ba8e-40ae3ebfc8f6">
+      <select name="query" required>
+        <option value="" disabled selected>How can we help you?*</option>
+        <option value="order">Issue with an Order</option>
+        <option value="feedback">Feedback</option>
+        <option value="other">Other Queries</option>
+      </select>
+      <input type="text" name="name" placeholder="Full Name*" required>
+      <input type="email" name="email" placeholder="Email Address*" required>
+      <input type="text" name="mobile" placeholder="Mobile Number (optional)">
+      <textarea name="message" placeholder="Type text*" required></textarea>
+      <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+  `;
+
+  // Re-bind the form submission event after reloading
+  document.getElementById("feedbackForm").addEventListener("submit", handleFormSubmission);
 }
 
-function submitFeedback() {
+// Function to handle the form submission via AJAX
+function handleFormSubmission(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
 
-    var formData = new FormData(document.getElementById("feedbackForm"))
-    
-    // keep the url empty to see the success event
-    // or put it any other to see the failure event
-    // this is just the client side code, a server side worker is required to
-    // make this work
-    url = "" 
-    var xhr = new XMLHttpRequest();
+  var formData = new FormData(form);
 
-    xhr.open("POST", url)
-    xhr.send(formData)
+  // Web3Forms API endpoint
+  var url = "https://api.web3forms.com/submit";
 
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            ajaxSuccess()
-        }
-        else {
-            ajaxError()
-        }
+  // Create a new XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.send(formData);
+
+  // Handle the server response
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      ajaxSuccess();
+    } else {
+      ajaxError();
     }
+  };
 
-    xhr.onerror = function () {
-        ajaxError()
-    }
+  // Handle network or other errors
+  xhr.onerror = function () {
+    ajaxError();
+  };
 }
+
+// Attach the event listener to the form submission
+form.addEventListener("submit", handleFormSubmission);
