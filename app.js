@@ -29,6 +29,55 @@ function scrollFunction() {
 
 
 
+
+
+
+//navbar meal plan seciton 
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all dropdown toggles
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    // Add event listeners to each toggle
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default behavior of anchor tags
+            
+            // Close any open dropdowns except the one clicked
+            dropdownToggles.forEach(otherToggle => {
+                if (otherToggle !== toggle) {
+                    otherToggle.nextElementSibling.classList.remove('show');
+                    otherToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle the current dropdown
+            const dropdownMenu = toggle.nextElementSibling;
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                dropdownMenu.classList.remove('show');
+                toggle.setAttribute('aria-expanded', 'false');
+            } else {
+                dropdownMenu.classList.add('show');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (e) {
+        dropdownToggles.forEach(toggle => {
+            const dropdownMenu = toggle.nextElementSibling;
+            if (!toggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+});
+
+
+
   
   
 

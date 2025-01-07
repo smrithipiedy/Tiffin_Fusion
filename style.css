@@ -9,49 +9,142 @@ body {
     text-align: center;
   }
   
-  .navbar-nav {
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    width: 100%; /* Ensure it fills the container */
-    align-items: center; /* Vertically center all items */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove padding */
+ /* Navbar General Styles */
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-family: 'Arial', sans-serif;
 }
 
-.nav-item {
-    margin: 0 5px; /* Reduce the space between the items */
-    padding: 0; /* Remove padding */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
-.nav-item a {
-    color: black;
-    text-transform: uppercase;
-    font-weight: 600; /* Lighten the font weight */
-    font-size: 14px; /* Ensure uniform font size for all links */
-    position: relative;
-    padding: 8px 12px; /* Consistent padding for each link */
-    transition: color 0.3s ease;
-}
-
-.nav-item a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    left: 50%;
-    bottom: 0;
-    background-color: red;
-    transition: width 0.3s ease, left 0.3s ease;
-}
-
-.nav-item a:hover::after {
-    width: 100%;
-    left: 0;
+.navbar-brand img {
+  height: 40px;
+  margin-right: 8px;
 }
 
 .navbar-toggler {
-    margin-left: auto; /* Align the toggler to the right for mobile view */
+  margin-left: auto; /* Align toggler to the right for mobile view */
 }
+
+/* Navbar Links */
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  width: 100%; /* Ensure it fills the container */
+  align-items: center; /* Vertically center all items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove padding */
+}
+
+.nav-item {
+  margin: 0 5px; /* Reduce the space between the items */
+  padding: 0; /* Remove padding */
+}
+
+.nav-item a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600; /* Lighten the font weight */
+  font-size: 14px; /* Ensure uniform font size for all links */
+  position: relative;
+  padding: 8px 12px; /* Consistent padding for each link */
+  transition: color 0.3s ease;
+}
+
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 0;
+  background-color: red;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+
+  .nav-item {
+    margin: 5px 0; /* Add vertical spacing for mobile view */
+  }
+
+  .dropdown-menu {
+    width: 100%; /* Full width for mobile dropdowns */
+  }
+}
+
+/* Meal Plan Link */
+.nav-item.meal-plan a {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+
+/* Red line effect on hover for Meal Plan */
+.nav-item.meal-plan a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: 0;
+  background-color: red;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item.meal-plan a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Dropdown Menu - Initially hidden */
+.nav-item.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  min-width: 180px; /* Optional, you can adjust the width */
+}
+
+
+
 
 
 
