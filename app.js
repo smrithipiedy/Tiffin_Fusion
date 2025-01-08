@@ -15,6 +15,21 @@ function debounce(func, wait = 20, immediate = true) {
     };
 }
 
+// Function to handle intersection and apply animation
+const menuItems = document.querySelectorAll(".menu-item");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible"); // Remove class to allow re-trigger
+    }
+  });
+});
+
+// Observe each menu item
+menuItems.forEach((item) => observer.observe(item));
+
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
