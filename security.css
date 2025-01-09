@@ -1,0 +1,163 @@
+/* Base Styles */
+body {
+    background: url('Utils/st-3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    color: #000; /* Changed text color for better readability on light overlay */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 8px;
+  }
+  
+  /* Container and Overlay Styles */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 25vh;
+  }
+  
+  .overlay {
+    background-color: rgba(211, 207, 207, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraph Styles */
+  p {
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    min-height: 150px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #573c86;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #482c6d;
+  }
+  
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #573c86;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(207, 162, 236, 0.96);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(222, 130, 235, 0.91);
+  }
+  
+  /* Firefox Scrollbar Styling */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(207, 162, 236, 0.96) #573c86;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .overlay {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.75rem;
+    }
+  
+    .submit-btn {
+      font-size: 0.95rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .overlay {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .submit-btn {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  }
