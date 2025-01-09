@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Utils/20240921_154411.png">
+  <title>Security - Tiffin Fusion</title>
+  
+  <!-- Google Fonts for Enhanced Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: url('Utils/st-3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar Styles */
+    header {
+      width: 100%;
+      background-color: transparent; /* Transparent Navbar */
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    /* Header Section */
+    .header-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #573c86;
+      margin-bottom: 15px;
+    }
+
+    .header-section p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      font-weight: 500;
+    }
+
+    /* Security Sections */
+    section {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #573c86;
+      margin-bottom: 10px;
+    }
+
+    section p, section ul {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    section ul li {
+      margin-bottom: 10px;
+    }
+
+    section a {
+      color: #573c86;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section a:hover, section a:focus {
+      color: #482c6d;
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-section h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.3rem;
+      }
+
+      section p, section ul {
+        font-size: 0.95rem;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-section h1 {
+        font-size: 1.8rem;
+      }
+
+      section h2 {
+        font-size: 1.2rem;
+      }
+
+      section p, section ul {
+        font-size: 0.9rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="Utils/1726914447956.png" alt="Tiffin Fusion Logo">
+        </a>
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Add navbar links here if needed -->
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header-section">
+        <h1>Security</h1>
+        <p>Your security is our priority. At Tiffin Fusion, we are committed to protecting your personal information and ensuring a safe and secure experience.</p>
+      </div>
+
+      <!-- Security Information Sections -->
+      <section>
+        <h2>1. Data Protection</h2>
+        <p>We implement a variety of security measures to maintain the safety of your personal information. These measures include:</p>
+        <ul>
+          <li><strong>Data Encryption:</strong> All sensitive data is encrypted using industry-standard protocols.</li>
+          <li><strong>Regular Audits:</strong> We conduct periodic security audits to identify and address potential vulnerabilities.</li>
+          <li><strong>Access Control:</strong> Access to personal information is restricted to authorized personnel only.</li>
+          <li><strong>Secure Hosting:</strong> Our servers are hosted in secure data centers with robust physical and digital protections.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. User Responsibilities</h2>
+        <p>To help us protect your information, you should:</p>
+        <ul>
+          <li>Use strong, unique passwords for your accounts.</li>
+          <li>Regularly update your software and devices to protect against security threats.</li>
+          <li>Avoid sharing sensitive information unless necessary and ensure you are communicating through secure channels.</li>
+          <li>Notify us immediately if you suspect any unauthorized access to your account.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Reporting Security Issues</h2>
+        <p>If you discover any security vulnerabilities or have concerns about the security of our services, please report them to us immediately:</p>
+        <ul>
+          <li>Email: <a href="mailto:security@tiffinfusion.com">security@tiffinfusion.com</a></li>
+          <li>Phone: +1 (234) 567-8902</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Third-Party Services</h2>
+        <p>Our website may contain links to third-party services and websites. While we strive to use reputable providers, we are not responsible for the security practices or content of these external sites. We recommend reviewing their respective privacy and security policies.</p>
+      </section>
+
+      <section>
+        <h2>5. Changes to Our Security Policies</h2>
+        <p>Tiffin Fusion reserves the right to update or modify these security policies at any time. Any changes will be posted on this page, and significant updates will be communicated through our website or other channels.</p>
+      </section>
+
+      <section>
+        <h2>6. Contact Us</h2>
+        <p>For any questions or concerns regarding our security policies, please reach out to us at:</p>
+        <ul>
+          <li>Email: <a href="mailto:security@tiffinfusion.com">security@tiffinfusion.com</a></li>
+          <li>Phone: +1 (234) 567-8902</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  
+  <!-- Optional JavaScript for Navbar Toggler (if using Bootstrap JS) -->
+  <!--
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+  -->
+</body>
+</html>
