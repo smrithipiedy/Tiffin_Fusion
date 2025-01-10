@@ -71,7 +71,7 @@
   .auth-btn:active {
     transform: scale(0.98);
   }
-  
+
   /* Input group */
   .input-group {
     margin-bottom: 20px;
@@ -115,7 +115,7 @@
     text-align: center;
     animation: popUp 0.5s ease-out;
   }
-  
+
   .auth-box h2 {
     font-size: 26px;
     font-weight: bold;
