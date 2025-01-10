@@ -14,8 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes importing
 import { authRouter } from '../routes/auth.routes.js';
+import { profileRouter } from '../routes/profile.routes.js';
 
 // Routes
 app.use("/api/auth", authRouter)
+app.use("/api/profile", profileRouter)
 
 export { app };
