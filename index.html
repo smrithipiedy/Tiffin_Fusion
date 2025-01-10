@@ -645,5 +645,13 @@
   <script src="app.js"></script>
   <script src="submitQuery.js"></script>
 </div>
+
+<script>
+  if (localStorage.getItem("authToken")) {
+    console.log("user logged in")
+  }else{
+    console.log("not logged in")
+  }
+</script>
 </body>
 </html>
