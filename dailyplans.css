@@ -56,10 +56,6 @@ body {
     transition: transform 0.8s; /* Highlighted: Added smooth transition for flip animation */
 }
 
-.daily-plan-card:hover .card-inner {
-    transform: rotateY(180deg); /* Highlighted: Flip card on hover */
-}
-
 .card-front,
 .card-back {
     position: absolute;
@@ -96,6 +92,31 @@ body {
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
+
+.meal-name {
+    display: inline-block; /* Make it behave like a button */
+    padding: 10px 20px;
+    background-color: #4caf50; /* Button color */
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .meal-name:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .meal-name:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px); /* Simulates button press */
+    background-color: #3e8e41; /* Even darker when clicked */
+  }
 
 .price {
     font-size: 1rem;
