@@ -72,7 +72,7 @@ body {
 }
 
 .card-front {
-    background: #fff;
+    background: #e03e00;
 }
 
 .card-image {
@@ -103,8 +103,8 @@ body {
 }
 
 .card-back {
-    background: #fff;
-    color: #333;
+    background: #e03e00 ;
+    color: #fff;
     transform: rotateY(180deg); /* Highlighted: Defined back face rotation */
     padding: 15px;
     box-sizing: border-box;
