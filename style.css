@@ -10,7 +10,135 @@ body{
   }
 
 /* Loader CSS */
+.loader {
+  background-color: #Ea3c53;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
+}
 
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader.removed {
+  display: none;
+}
+
+.pulse {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 40px #f40009, 0 0 50px #f40009;
+  border: 1px solid #f40009;
+}
+
+.pulse img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid rgb(246, 73, 73);
+  border-radius: 50%; /* Ensure the image stays circular */
+  z-index: 1; /* Keep the image above the rings */
+  animation: imagePulse 4s ease-out infinite;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f40009;
+  z-index: 0; /* Ensure the rings are behind the image */
+  animation: pulsing 4s ease-out infinite;
+}
+
+.ring:nth-of-type(1) {
+  animation-delay: -1s;
+}
+
+.ring:nth-of-type(2) {
+  animation-delay: -2s;
+}
+
+.ring:nth-of-type(3) {
+  animation-delay: -3s;
+}
+
+@keyframes pulsing {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(6);
+    opacity: 0;
+  }
+}
+
+@keyframes imagePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slightly enlarge the image */
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) { /* Tablets */
+  .pulse {
+    width: 250px;
+    height: 250px;
+    box-shadow: inset 0 0 30px #f40009, 0 0 40px #f40009;
+  }
+  .pulse img {
+    border: 2px solid rgb(246, 73, 73);
+  }
+  .ring {
+    animation: pulsing 3s ease-out infinite; /* Adjust timing for smaller devices */
+  }
+}
+
+@media (max-width: 480px) { /* Phones */
+  .pulse {
+    width: 200px;
+    height: 200px;
+    box-shadow: inset 0 0 20px #f40009, 0 0 30px #f40009;
+  }
+  .pulse img {
+    border: 2px solid rgb(246, 73, 73);
+  }
+  .ring {
+    animation: pulsing 2.5s ease-out infinite;
+  }
+}
+
+#main-content {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#main-content.visible {
+  opacity: 1;
+}
   
  /* Navbar General Styles */
 .navbar {
