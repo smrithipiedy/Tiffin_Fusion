@@ -1,3 +1,18 @@
+// Loader Javascript
+// Wait for the entire page to load
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    const mainContent = this.document.getElementById('main-content');
+
+    preloader.classList.add('hidden'); // Add the class to hide the loader
+
+    //Remove the loader after the transition
+    preloader.addEventListener('transitionend',() => {preloader.classList.add('removed');
+    });
+
+    mainContent.classList.add('visible')
+  });
+
 
 // Debounce function to limit how often a function can run
 function debounce(func, wait = 20, immediate = true) {
