@@ -20,37 +20,33 @@ const subscriberSchema = new mongoose.Schema({
 const Subscriber = mongoose.model('Subscriber', subscriberSchema);
 
 app.post('/subscribe', async (req, res) => {
-  const email = req.body.email;
-
-  // Log the incoming email to ensure it's received properly
-  console.log('Received email:', email);
-
-  if (!email) {
-    console.log('No email provided');
-    return res.status(400).send('Email is required');
-  }
-
-  try {
-    // Check if the email is already subscribed
-    const existingSubscriber = await Subscriber.findOne({ email: email });
-    if (existingSubscriber) {
-      console.log('Email already subscribed:', email);
-      return res.status(400).send('This email is already subscribed');
+    try {
+      const { email } = req.body;
+  
+      // Email regex pattern to validate the format
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+      // Check if email is valid
+      if (!emailPattern.test(email)) {
+        return res.status(400).send('Invalid email format');
+      }
+  
+      // Check if the email already exists
+      const existingSubscriber = await Subscriber.findOne({ email });
+      if (existingSubscriber) {
+        return res.status(409).send('Email is already subscribed');
+      }
+  
+      // Create a new subscriber
+      const newSubscriber = new Subscriber({ email });
+      await newSubscriber.save();
+  
+      res.status(200).send('Subscription successful');
+    } catch (error) {
+      console.error('Error subscribing:', error);
+      res.status(500).send('Error subscribing. Please try again later.');
     }
-
-    // Save the new subscriber
-    const newSubscriber = new Subscriber({ email: email });
-    await newSubscriber.save();
-
-    console.log('Email successfully subscribed:', email);
-    res.status(200).send('Thank you for subscribing!');
-
-  } catch (err) {
-    // Handle unexpected errors
-    console.error('Error during subscription process:', err);
-    res.status(500).send('Error subscribing. Try again later.');
-  }
-});
+  });
 
 app.use(express.static('public'));
 
