@@ -87,7 +87,8 @@
 
         <!-- Sign In Link -->
         <li class="nav-item">
-          <a href="signin.html" class="nav-link mx-2">Sign In</a>
+          <!-- <a href="signin.html" class="nav-link mx-2">Sign In</a> -->
+          <button id="signinoutbtn" class="nav-link mx-2" > "" </button>
         </li>
       </ul>
     </div>
@@ -665,5 +666,24 @@
     console.log("not logged in")
   }
 </script>
+
+<script>
+  const btn = document.getElementById("signinoutbtn")
+  if (localStorage.getItem("authToken")) {
+    btn.innerText= "Sign Out"
+  }else{
+    btn.innerText = "Sign In"
+  }
+
+  btn.addEventListener("click",()=>{
+    if (localStorage.getItem("authToken")) {
+    console.log("have to signout")
+  }else{
+    window.location.href="/signin.html"
+  }
+  })
+
+</script>
+
 </body>
 </html>
