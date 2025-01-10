@@ -15,17 +15,37 @@ function debounce(func, wait = 20, immediate = true) {
     };
 }
 
+// Function to handle intersection and apply animation
+const menuItems = document.querySelectorAll(".menu-item");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible"); // Remove class to allow re-trigger
+    }
+  });
+});
+
+// Observe each menu item
+menuItems.forEach((item) => observer.observe(item));
+
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 // Show or hide the button based on scroll position
 function scrollFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "flex";
+        scrollToTopBtn.style.display = "block"; // Changed 'flex' to 'block'
     } else {
         scrollToTopBtn.style.display = "none";
     }
 }
+
+// Add the event listener to trigger the scrollFunction when the user scrolls
+window.onscroll = function() {
+    scrollFunction();
+};
 
 
 
