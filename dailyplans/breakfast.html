@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../Utils/20240921_154411.png">
+  <title>Daily Meal Plans</title>
+  <link rel="stylesheet" href="dailyplans.css">
+</head>
+<style>
+    /* General Styling */
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #E53935;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s; /* Highlighted: Added smooth transition effect */
+}
+
+.nav-link:hover {
+    color: #d32f2f; /* Highlighted: Changed hover color for navbar links */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.daily-plan-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card Styles */
+.daily-plan-card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px; /* Highlighted: Added 3D perspective for card flip effect */
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s; /* Highlighted: Added smooth transition for flip animation */
+}
+
+.daily-plan-card:hover .card-inner {
+    transform: rotateY(180deg); /* Highlighted: Flip card on hover */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Highlighted: Added rounded corners for better aesthetics */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Highlighted: Added subtle shadow for depth */
+}
+
+.card-front {
+    background: #fff;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Highlighted: Ensured image scales properly */
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Highlighted: Semi-transparent background for text visibility */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.meal-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-back {
+    background: #fff;
+    color: #333;
+    transform: rotateY(180deg); /* Highlighted: Defined back face rotation */
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card-back h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-back ul li {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .daily-plan-container {
+        flex-direction: column;
+        align-items: center; /* Highlighted: Centered content for smaller screens */
+    }
+
+    .daily-plan-card {
+        width: 80%; /* Highlighted: Adjusted width for tablet screens */
+        height: 400px; /* Highlighted: Increased height for better spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        font-size: 0.9rem; /* Highlighted: Reduced navbar font size for mobile screens */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Highlighted: Adjusted title font size for better visibility */
+    }
+
+    .daily-plan-card {
+        width: 90%; /* Highlighted: Adjusted width for mobile screens */
+        height: 380px; /* Highlighted: Adjusted height for better layout on mobile */
+    }
+}
+
+</style>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+      <a href="../dailyplans.html" class="nav-link">Back</a>
+    </header>
+  
+    <!-- Daily Meal Plans -->
+    <section id="meal-plans" class="daily-plan-section">
+      <h2 class="section-title">BREAKFAST PLAN</h2>
+  
+      <!-- First Row -->
+      <div class="daily-plan-container" style="margin-bottom: 20px;">
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="break1.jpg" alt="Breakfast Plan" class="card-image">
+              <div class="card-overlay">
+                <h3 class="meal-name">Bread Amlete</h3>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Bread Amlet</h3>
+              <h2>Price - Rs.190</h2>
+            </div>
+          </div>
+        </div>
+  
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="break2.jpg" alt="Lunch Plan" class="card-image">
+              <div class="card-overlay">
+                <h3 class="meal-name">Puri Bhaji</h3>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Puri Bhaji</h3>
+              <h2>Price - Rs.200</h2>
+            </div>
+          </div>
+        </div>
+  
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="break3.jpg" alt="Dinner Plan" class="card-image">
+              <div class="card-overlay">
+                <h3 class="meal-name">Appam</h3>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Appam</h3>
+              <h2>Price - Rs.70</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Second Row -->
+      <div class="daily-plan-container">
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="break4.jpg" alt="Lunch Plan" class="card-image">
+              <div class="card-overlay">
+                <h3 class="meal-name">Idli</h3>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Idli</h3>
+              <h2>Price - Rs.80</h2>
+            </div>
+          </div>
+        </div>
+  
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="break5.jpg" alt="Lunch Plan" class="card-image">
+              <div class="card-overlay">
+                <h3 class="meal-name">Upma</h3>
+              </div>
+            </div>
+            <div class="card-back">
+              <h2>Price - Rs.65</h2>
+            </div>
+          </div>
+        </div>
+  
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="break6.jpg" alt="Lunch Plan" class="card-image">
+              <div class="card-overlay">
+                <h3 class="meal-name">Rava Dosa</h3>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3>Rava Dosa</h3>
+              <h2>Price - Rs.110</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  
+</html>
