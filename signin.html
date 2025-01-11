@@ -11,7 +11,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
             min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -22,13 +22,13 @@
             justify-content: center;
             align-items: center;
         }
-
+        
         .container {
             width: 100%;
             max-width: 450px;
             padding: 20px;
         }
-
+        
         .auth-box {
             background: rgba(255, 255, 255, 0.95);
             padding: 40px;
@@ -36,12 +36,12 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
         }
-
+        
         .logo-container {
             text-align: center;
             margin-bottom: 30px;
         }
-
+        
         .logo {
             width: 80px;
             height: 80px;
@@ -52,32 +52,32 @@
             justify-content: center;
             margin-bottom: 15px;
         }
-
+        
         .logo svg {
             width: 40px;
             height: 40px;
             fill: white;
         }
-
+        
         h2 {
             color: #333;
             font-size: 28px;
             margin-bottom: 30px;
             text-align: center;
         }
-
+        
         .input-group {
             margin-bottom: 25px;
             position: relative;
         }
-
+        
         .input-group label {
             display: block;
             margin-bottom: 8px;
             color: #555;
             font-weight: 500;
         }
-
+        
         .input-group input {
             width: 100%;
             padding: 15px;
@@ -87,13 +87,13 @@
             transition: all 0.3s ease;
             background: white;
         }
-
+        
         .input-group input:focus {
             border-color: #ff4d4d;
             outline: none;
             box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.1);
         }
-
+        
         .password-toggle {
             position: absolute;
             right: 15px;
@@ -101,7 +101,7 @@
             cursor: pointer;
             color: #666;
         }
-
+        
         .auth-btn {
             width: 100%;
             padding: 15px;
@@ -115,50 +115,50 @@
             transition: all 0.3s ease;
             margin-top: 10px;
         }
-
+        
         .auth-btn:hover {
             background: #ff3333;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
         }
-
+        
         .auth-btn:active {
             transform: translateY(0);
         }
-
+        
         .alternate-auth {
             text-align: center;
             margin-top: 25px;
             color: #666;
         }
-
+        
         .alternate-auth a {
             color: #ff4d4d;
             text-decoration: none;
             font-weight: 600;
             margin-left: 5px;
         }
-
+        
         .alternate-auth a:hover {
             text-decoration: underline;
         }
-
+        
         .social-auth {
             margin-top: 30px;
             text-align: center;
         }
-
+        
         .social-auth p {
             color: #666;
             margin-bottom: 15px;
         }
-
+        
         .social-buttons {
             display: flex;
             gap: 15px;
             justify-content: center;
         }
-
+        
         .social-btn {
             padding: 12px 25px;
             border: 2px solid #e1e1e1;
@@ -170,17 +170,17 @@
             align-items: center;
             gap: 10px;
         }
-
+        
         .social-btn:hover {
             background: #f8f8f8;
             transform: translateY(-2px);
         }
-
+        
         .social-btn img {
             width: 20px;
             height: 20px;
         }
-
+        
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -191,39 +191,39 @@
                 transform: translateY(0);
             }
         }
-
+        
         .auth-box {
             animation: slideIn 0.5s ease-out;
         }
-
+        
         .validation-message {
             color: #ff4d4d;
             font-size: 14px;
             margin-top: 5px;
             display: none;
         }
-
+        
         .input-group input:invalid:focus ~ .validation-message {
             display: block;
         }
-
+        
         .forgot-password {
             text-align: right;
             margin-top: -20px;
             margin-bottom: 20px;
         }
-
+        
         .forgot-password a {
             color: #666;
             font-size: 14px;
             text-decoration: none;
         }
-
+        
         .forgot-password a:hover {
             color: #ff4d4d;
         }
-
-    </style>
+        
+        </style>
 </head>
 <body>
     <div class="container">
@@ -288,39 +288,53 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script type="module">
+        import { url } from './Baselink.js';
+        
+        document.getElementById('authForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+        
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+        
+            // Basic validation
+            if (!email || !password) {
+                alert('Please fill in both fields');
+                return;
+            }
+        
+            try {
+                console.log(email, password);
+                const response = await axios.post(`${url}/api/auth/login`, {
+                    email,
+                    password,
+                });
+        
+                console.log('Login successful!');
+                console.log('Message:', response.data.message);
+                console.log('Token:', response.data.token);
+                console.log('User:', response.data.user);
+        
+                // Optionally store the token (e.g., in localStorage)
+                localStorage.setItem('authToken', response.data.token);
+        
+                // Redirect the user to a dashboard or another page
+                window.location.href = '/index.html';
+            } catch (error) {
+                const message = error.response?.data?.message || 'Login failed';
+                console.error('Error during login:', message);
+                alert(`Login failed: ${message}`);
+            }
+        });
+    </script>
+    
     <script>
-        // Toggle password visibility
-        document.querySelector('.password-toggle').addEventListener('click', function() {
-            const passwordInput = document.querySelector('#password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                this.textContent = '👁️‍🗨️';
-            } else {
-                passwordInput.type = 'password';
-                this.textContent = '👁️';
-            }
-        });
-
-        // Form validation
-        document.getElementById('authForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            if (email && password) {
-                // Add your authentication logic here
-                console.log('Form submitted:', { email, password });
-            }
-        });
-
-        // Add loading state to button
-        document.querySelector('.auth-btn').addEventListener('click', function() {
-            this.innerHTML = '<span class="loading">Signing in...</span>';
-            setTimeout(() => {
-                this.innerHTML = 'Sign In';
-            }, 2000);
-        });
+        if (localStorage.getItem("authToken")) {
+            window.location.href="/index.html"
+        }else{
+            console.log("not logged in")
+        }
     </script>
 </body>
 </html>
