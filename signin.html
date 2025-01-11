@@ -225,6 +225,27 @@
         }
         
         </style>
+        <style>
+            .admin-auth {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.admin-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.admin-btn:hover {
+    background-color: #555;
+}
+
+        </style>
 </head>
 <body>
     <div class="container">
@@ -242,7 +263,7 @@
                 </div>
                 <h2>Welcome to Tiffin Fusion</h2>
             </div>
-            
+    
             <form id="authForm">
                 <div class="input-group">
                     <label for="email">Email Address</label>
@@ -251,7 +272,7 @@
                            placeholder="Enter your email">
                     <span class="validation-message">Please enter a valid email address</span>
                 </div>
-
+    
                 <div class="input-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" required
@@ -260,14 +281,14 @@
                     <span class="password-toggle">👁️</span>
                     <span class="validation-message">Password must be at least 8 characters long</span>
                 </div>
-
+    
                 <div class="forgot-password">
                     <a href="#">Forgot Password?</a>
                 </div>
-
+    
                 <button type="submit" class="auth-btn">Sign In</button>
             </form>
-
+    
             <div class="social-auth">
                 <p>Or continue with</p>
                 <div class="social-buttons">
@@ -281,13 +302,21 @@
                     </button>
                 </div>
             </div>
-
+    
             <div class="alternate-auth">
                 <span>Don't have an account?</span>
                 <a href="signup.html">Sign up</a>
             </div>
+    
+            <!-- Admin Sign-In Button -->
+            <div class="admin-auth">
+                <button id="adminbtn" class="auth-btn admin-btn">
+                    Admin Sign In
+                </button>
+            </div>
         </div>
     </div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
     <script type="module">
@@ -390,5 +419,30 @@
         });
     </script>
     
+=======
+    <script type="module">
+        import {url} from "./Baselink.js"
+        console.log(url)
+        const admin = document.getElementById("adminbtn")
+        console.log(admin)
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+    
+        // Basic validation
+        if (!email || !password) {
+            alert('Please fill in both fields');
+            return;
+        }
+        admin.addEventListener("click",()=>{
+            console.log("clicked")
+            try {
+                axios.post(`${url}/auth/check-admin`)
+                .then((resp)=>{console.log(resp.data)})
+                .catch((err)=>{console.log(err)})
+            } catch (error) {
+                console.error(error)
+            }
+        })
+    </script>
 </body>
 </html>
