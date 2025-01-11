@@ -1446,7 +1446,7 @@ html {
   background:#de5d4e;
 }
 
-.contact-form button {
+/* .contact-form button { */
   /* padding: 12px 20px;
   background-color: #d25749;
   color: #fff;
@@ -1454,7 +1454,7 @@ html {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px; */
-}
+/* } */
 
 .contact-form button:hover {
   background-color: #c0392b;
