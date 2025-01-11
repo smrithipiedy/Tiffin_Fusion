@@ -133,9 +133,11 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
 
-    <script>
-        // Toggle password visibility
+    <script type="module">
+        import {url} from "./Baselink.js"
+         // Toggle password visibility
         document.querySelector('.password-toggle').addEventListener('click', function () {
             const passwordInput = document.getElementById('adminPassword');
             passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
@@ -143,11 +145,28 @@
 
         // Handle form submission (you can customize this for your backend)
         document.getElementById('adminAuthForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Admin Sign-In Submitted');
-            // Add your form submission logic here (e.g., send request to backend)
-            console.log(e.target)
-        });
+    e.preventDefault();
+    const aemail = document.getElementById('adminEmail').value;
+    const apass = document.getElementById('adminPassword').value;
+    
+    console.log("Form submitted with:", aemail, apass);
+
+    // Send the data to your backend (using axios or fetch)
+    axios.post(`${url}/api/auth/check-admin`, {
+        email: aemail,
+        password: apass
+    })
+    .then((resp) => {
+        console.log(resp.data);
+        window.location.href ="/adminindex.html"
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+});
+
     </script>
+
+
 </body>
 </html>
