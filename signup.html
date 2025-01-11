@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiffin Fusion - Sign Up</title>
     <style>
+        /* Styling */
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +17,42 @@
         body {
             min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+                url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+        }
+
+        .auth-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Additional Styling */
+        /* ... same styles as previously provided ... */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -224,7 +261,7 @@
             display: none;
         }
 
-        .input-group input:invalid:focus ~ .validation-message {
+        .input-group input:invalid:focus~.validation-message {
             display: block;
         }
 
@@ -233,6 +270,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -243,62 +281,49 @@
             animation: slideIn 0.5s ease-out;
         }
     </style>
+
 </head>
+
 <body>
     <div class="container">
         <div class="auth-box">
             <div class="logo-container">
                 <div class="logo">
                     <svg viewBox="0 0 24 24">
-                        <path d="M12,3L4,9V21H20V9L12,3M12,7.5L16,10.5V11.5L12,8.5L8,11.5V10.5L12,7.5M6,19V12.5L12,9.5L18,12.5V19H6Z"/>
+                        <path
+                            d="M12,3L4,9V21H20V9L12,3M12,7.5L16,10.5V11.5L12,8.5L8,11.5V10.5L12,7.5M6,19V12.5L12,9.5L18,12.5V19H6Z" />
                     </svg>
                 </div>
                 <h2>Create Account</h2>
             </div>
-            
+
             <form id="signupForm">
                 <div class="input-group">
                     <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" required 
-                           minlength="2"
-                           placeholder="Enter your full name">
-                    <span class="validation-message">Please enter your full name</span>
+                    <input type="text" id="fullName" required minlength="2" placeholder="Enter your full name">
                 </div>
 
                 <div class="input-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" required 
-                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                           placeholder="Enter your email">
-                    <span class="validation-message">Please enter a valid email address</span>
+                    <input type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        placeholder="Enter your email">
                 </div>
 
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" required
-                           minlength="8"
-                           placeholder="Create a password">
+                    <input type="password" id="password" required minlength="8" placeholder="Create a password">
                     <span class="password-toggle">👁️</span>
-                    <div class="password-strength">
-                        <span>Password Strength:</span>
-                        <div class="strength-meter">
-                            <div></div>
-                        </div>
-                    </div>
-                    <span class="validation-message">Password must be at least 8 characters long</span>
                 </div>
 
                 <div class="input-group">
                     <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" required
-                           placeholder="Confirm your password">
-                    <span class="validation-message">Passwords must match</span>
+                    <input type="password" id="confirmPassword" required placeholder="Confirm your password">
                 </div>
 
                 <div class="terms">
                     <label>
-                        <input type="checkbox" required> I agree to the 
-                        <a href="#">Terms of Service</a> and 
+                        <input type="checkbox" required> I agree to the
+                        <a href="#">Terms of Service</a> and
                         <a href="#">Privacy Policy</a>
                     </label>
                 </div>
@@ -326,87 +351,70 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script type="module">
+        import { url } from "./Baselink.js";
+        console.log(url);
 
-    <script>
-        // Toggle password visibility
-        document.querySelectorAll('.password-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function() {
-                const passwordInput = this.previousElementSibling;
-                if (passwordInput.type === 'password') {
-                    passwordInput.type = 'text';
-                    this.textContent = '👁️‍🗨️';
-                } else {
-                    passwordInput.type = 'password';
-                    this.textContent = '👁️';
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('signupForm');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const passwordToggle = document.querySelector('.password-toggle');
+
+            // Password visibility toggle
+            passwordToggle.addEventListener('click', () => {
+                const type = passwordInput.type === 'password' ? 'text' : 'password';
+                passwordInput.type = type;
+                confirmPasswordInput.type = type;
+                passwordToggle.textContent = type === 'password' ? '👁️' : '🙈';
+            });
+
+            // Form submission logic
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = passwordInput.value.trim();
+                const confirmPassword = confirmPasswordInput.value.trim();
+
+                // Basic client-side validation
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match');
+                    return;
+                }
+                console.log(fullName, email, password)
+                try {
+                    const response = await axios.post(`${url}/api/auth/signup`, {
+                        username: fullName,
+                        email,
+                        password
+                    });
+
+
+                // Optionally store the token (e.g., in localStorage)
+                localStorage.setItem('authToken', response.data.token);
+
+                    alert('Signup successful! Redirecting...');
+
+                    window.location.href = '/';
+                } catch (error) {
+                    const message = error.response?.data?.message || 'Signup failed';
+                    alert(`Signup failed: ${message}`);
                 }
             });
         });
-
-        // Password strength meter
-        const passwordInput = document.getElementById('password');
-        const strengthMeter = document.querySelector('.strength-meter div');
-
-        passwordInput.addEventListener('input', function() {
-            const strength = calculatePasswordStrength(this.value);
-            strengthMeter.style.width = `${strength}%`;
-            strengthMeter.style.backgroundColor = getStrengthColor(strength);
-        });
-
-        function calculatePasswordStrength(password) {
-            let strength = 0;
-            
-            if (password.length >= 8) strength += 20;
-            if (password.match(/[a-z]+/)) strength += 20;
-            if (password.match(/[A-Z]+/)) strength += 20;
-            if (password.match(/[0-9]+/)) strength += 20;
-            if (password.match(/[^a-zA-Z0-9]+/)) strength += 20;
-            
-            return strength;
-        }
-
-        function getStrengthColor(strength) {
-            if (strength < 40) return '#ff4d4d';
-            if (strength < 60) return '#ffa64d';
-            if (strength < 80) return '#4dff4d';
-            return '#00cc00';
-        }
-
-        // Form validation
-        const form = document.getElementById('signupForm');
-        const confirmPassword = document.getElementById('confirmPassword');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (passwordInput.value !== confirmPassword.value) {
-                confirmPassword.setCustomValidity("Passwords don't match");
-                return;
-            }
-            
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                password: passwordInput.value
-            };
-            
-            // Add your signup logic here
-            console.log('Form submitted:', formData);
-            
-            // Simulate loading state
-            const submitButton = this.querySelector('.auth-btn');
-            submitButton.innerHTML = 'Creating Account...';
-            submitButton.disabled = true;
-            
-            setTimeout(() => {
-                submitButton.innerHTML = 'Create Account';
-                submitButton.disabled = false;
-            }, 2000);
-        });
-
-        // Clear password mismatch error when user types
-        confirmPassword.addEventListener('input', function() {
-            this.setCustomValidity('');
-        });
     </script>
+
+<script>
+    if (localStorage.getItem("authToken")) {
+        window.location.href="/"
+    }else{
+        console.log("not logged in")
+    }
+</script>
+
 </body>
+
 </html>

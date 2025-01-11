@@ -29,7 +29,7 @@ function ajaxError() {
 function restartFeedback() {
   formContainer.innerHTML = `
     <form id="feedbackForm">
-      <input type="hidden" name="access_key" value="9038a00f-a336-423e-ba8e-40ae3ebfc8f6">
+      <input type="hidden" name="access_key" value="24c2d733-3b85-4b25-9d33-ee0fdb1040d8">
       <select name="query" required>
         <option value="" disabled selected>How can we help you?*</option>
         <option value="order">Issue with an Order</option>
