@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Tiffin Fusion - Auth</title>
     <style>
         * {
@@ -365,6 +366,60 @@
             console.log("not logged in")
         }
     </script>
+
+    <!-- Integrating with Google using Firebase Console -->
+    <script type="module">
+        // Import necessary Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"; // Import Firebase Auth
+    
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB6rcn9i6J-mRlaEDBbOXkgVZ7Q-3xvZuQ",
+            authDomain: "tiffin-fusion.firebaseapp.com",
+            projectId: "tiffin-fusion",
+            storageBucket: "tiffin-fusion.firebasestorage.app",
+            messagingSenderId: "167817158100",
+            appId: "1:167817158100:web:a38deb49378df276b34a41",
+            measurementId: "G-4MXBNMHD9Y"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app); // Initialize Firebase Authentication
+    
+        // Google Auth provider
+        const provider = new GoogleAuthProvider();
+    
+        // Event listener for the custom Google sign-in button
+        document.querySelector('.social-btn').addEventListener('click', function () {
+            // Sign-in with Google
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const user = result.user;
+                    console.log("User signed in:", user);
+    
+                    // Example: alert user info
+                    alert(`Welcome ${user.displayName}!`);
+    
+                    // Redirect after successful sign-in (optional)
+                    // window.location.href = '/dashboard';
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.email;
+                    const credential = error.credential;
+    
+                    console.error("Error during sign-in:", errorMessage);
+                    alert("There was an error during the sign-in process. Please try again.");
+                });
+        });
+    </script>
+    
+=======
     <script type="module">
         import {url} from "./Baselink.js"
         console.log(url)
