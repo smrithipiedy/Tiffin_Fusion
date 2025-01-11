@@ -1,7 +1,147 @@
+
 section {
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  section {
+
     padding: 60px 0;
     text-align: center;
   }
+
+/* Loader CSS */
+.loader {
+  background-color: #Ea3c53;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader.removed {
+  display: none;
+}
+
+.pulse {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 40px #f40009, 0 0 50px #f40009;
+  border: 1px solid #f40009;
+}
+
+.pulse img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid rgb(246, 73, 73);
+  border-radius: 50%; /* Ensure the image stays circular */
+  z-index: 1; /* Keep the image above the rings */
+  animation: imagePulse 4s ease-out infinite;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f40009;
+  z-index: 0; /* Ensure the rings are behind the image */
+  animation: pulsing 4s ease-out infinite;
+}
+
+.ring:nth-of-type(1) {
+  animation-delay: -1s;
+}
+
+.ring:nth-of-type(2) {
+  animation-delay: -2s;
+}
+
+.ring:nth-of-type(3) {
+  animation-delay: -3s;
+}
+
+@keyframes pulsing {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(6);
+    opacity: 0;
+  }
+}
+
+@keyframes imagePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slightly enlarge the image */
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) { /* Tablets */
+  .pulse {
+    width: 250px;
+    height: 250px;
+    box-shadow: inset 0 0 30px #f40009, 0 0 40px #f40009;
+  }
+  .pulse img {
+    border: 2px solid rgb(246, 73, 73);
+  }
+  .ring {
+    animation: pulsing 3s ease-out infinite; /* Adjust timing for smaller devices */
+  }
+}
+
+@media (max-width: 480px) { /* Phones */
+  .pulse {
+    width: 200px;
+    height: 200px;
+    box-shadow: inset 0 0 20px #f40009, 0 0 30px #f40009;
+  }
+  .pulse img {
+    border: 2px solid rgb(246, 73, 73);
+  }
+  .ring {
+    animation: pulsing 2.5s ease-out infinite;
+  }
+}
+
+#main-content {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#main-content.visible {
+  opacity: 1;
+}
   
 
   body {
@@ -58,7 +198,6 @@ section {
         margin: 10px 0;
     }
 }
-=======
  /* Navbar General Styles */
 .navbar {
   background-color: #f8f9fa;
@@ -77,7 +216,7 @@ section {
 }
 
 .navbar-brand img {
-  height: 40px;
+  height: 70px;
   margin-right: 8px;
 }
 
@@ -290,7 +429,7 @@ section {
   /* Hero Section */
   .hero-section {
     position: relative;
-    background-image: url('Utils/food.jpg');
+    background-image: url('Utils/food-compressed.jpg');
     background-size: cover;
     background-position: center;
     height: 80vh; 
@@ -335,7 +474,71 @@ section {
     background-color: #0056b3;
 }
 
-
+form{
+    /* From Uiverse.io by Yaya12085 */ 
+.btn {
+    position: relative;
+    outline: 0;
+    border: 1px solid transparent;
+    background-color: #e14331;
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  }
+  
+  .btn span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all .4s ease;
+  }
+  
+  button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .btn span:nth-child(2),.btn span:nth-child(3) {
+    position: absolute;
+    top: 40px;
+    color: #fff;
+  }
+  
+  .btn span:nth-child(2) {
+    background-color: #d96558;
+  }
+  
+  .btn span:nth-child(3) {
+    background-color: #e14331;
+  }
+  
+  .btn:hover {
+    box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+  }
+  
+  .btn:hover span:nth-child(2), .btn:focus span:nth-child(3) {
+    top: 0;
+  }
+  
+  .btn:focus {
+    box-shadow: none;
+  }
+}
 /* Menu Section */
 
 body {
@@ -354,7 +557,7 @@ body {
   text-align: center;
   align-items: center;
   background-color: #f9f9f9;
-  font-family: "Pacifico", serif;
+  font-family: 'Cosmic Sans MS', cursive, sans-serif;
   font-weight: 400;
   font-style: normal;
   margin-bottom: -20px;
@@ -749,6 +952,7 @@ body {
 
 
 
+
 /******************************************************/
 /* Section Styling */
 .student-plan-section {
@@ -756,6 +960,7 @@ body {
   text-align: center;
   background-color: #f9f9f9;
 }
+
 
 .section-title {
   font-size: 2.5rem;
@@ -985,36 +1190,34 @@ html {
 
 
 
-/**************************/
-
-/* Scroll to Top Button */
+ /* Scroll to Top Button */
 #scrollToTopBtn {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 50px;  /* Position it 50px above the bottom */
+  right: 40px;   /* Position it 40px from the right edge */
   z-index: 99;
-  background-color: red;
+  background-color: red;  /* Button color */
   color: white;
   border: none;
   outline: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 50px;   /* Size of the button */
+  height: 50px;  
+  border-radius: 50%;   /* Circular shape */
   cursor: pointer;
-  display: none; /* Hidden by default */
+  display: none;  /* Hidden by default */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);   /* Subtle shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
 #scrollToTopBtn:hover {
-  background-color: red;
-  transform: scale(1.1);
+  background-color: red;  /* Darker red on hover */
+  transform: scale(1.1);  /* Slight zoom on hover */
 }
 
 #scrollToTopBtn i {
-  font-size: 20px;
+  font-size: 20px;   /* Icon size */
 }
 
 /* Responsive Adjustments */
@@ -1022,30 +1225,31 @@ html {
 /* Tablets and below */
 @media (max-width: 992px) {
   #scrollToTopBtn {
-      bottom: 30px;
-      right: 30px;
-      width: 45px;
-      height: 45px;
+    bottom: 30px;  /* Shift upwards */
+    right: 30px;
+    width: 45px;
+    height: 45px;
   }
 
   #scrollToTopBtn i {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
 /* Mobile Phones */
 @media (max-width: 576px) {
   #scrollToTopBtn {
-      bottom: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
+    bottom: 100px;   /* Shift further upwards */
+    right: 20px;
+    width: 40px;
+    height: 40px;
   }
 
   #scrollToTopBtn i {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
+
 
 /***********************************************************/
 /* Blog section styling */
@@ -1085,6 +1289,7 @@ html {
 
 /* Title and paragraph */
 .who-we-are h2 {
+  font-family: 'Cosmic Sans MS', cursive, sans-serif;;
   font-size: 2.5em;
   margin-bottom: 10px;
   position: relative;
@@ -1199,7 +1404,7 @@ html {
 }
 
 .read-more-button:hover {
-  background: #0056b3; /* Darker shade on hover */
+  background: #e03e00; /* Darker shade on hover */
 }
 
 
@@ -1284,17 +1489,28 @@ html {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+} 
+.contact-form input:hover
+{
+    border-color:#da1d08;
+}
+.contact-form input:focus
+{
+    outline:rgb(214, 5, 5);
+}
+.contact-form select option:hover{
+  background:#de5d4e;
 }
 
-.contact-form button {
-  padding: 12px 20px;
-  background-color: #e74c3c;
+/* .contact-form button { */
+  /* padding: 12px 20px;
+  background-color: #d25749;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-}
+  font-size: 16px; */
+/* } */
 
 .contact-form button:hover {
   background-color: #c0392b;
@@ -1424,9 +1640,12 @@ footer {
 }
 
 .footer-section.newsletter h2 {
+  font-family: 'Cosmic Sans MS', cursive, sans-serif;
   font-size: 22px;
   color: #ea0202;
   margin-bottom: 15px;
+  text-shadow: 1px 1px 0 black;
+                 
 }
 
 .footer-section.newsletter p {
@@ -1594,5 +1813,4 @@ footer {
       padding: 30px 10px;
   }
 }
-
 

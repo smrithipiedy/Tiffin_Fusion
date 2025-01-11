@@ -1,3 +1,18 @@
+// Loader Javascript
+// Wait for the entire page to load
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    const mainContent = this.document.getElementById('main-content');
+
+    preloader.classList.add('hidden'); // Add the class to hide the loader
+
+    //Remove the loader after the transition
+    preloader.addEventListener('transitionend',() => {preloader.classList.add('removed');
+    });
+
+    mainContent.classList.add('visible')
+  });
+
 
 // Debounce function to limit how often a function can run
 function debounce(func, wait = 20, immediate = true) {
@@ -36,11 +51,16 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 // Show or hide the button based on scroll position
 function scrollFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "flex";
+        scrollToTopBtn.style.display = "block"; // Changed 'flex' to 'block'
     } else {
         scrollToTopBtn.style.display = "none";
     }
 }
+
+// Add the event listener to trigger the scrollFunction when the user scrolls
+window.onscroll = function() {
+    scrollFunction();
+};
 
 
 
