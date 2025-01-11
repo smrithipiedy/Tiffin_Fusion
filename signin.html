@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Tiffin Fusion - Auth</title>
     <style>
         * {
@@ -366,8 +365,6 @@
             console.log("not logged in")
         }
     </script>
-
-    <!-- Integrating with Google using Firebase Console -->
     <script type="module">
         // Import necessary Firebase SDKs
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
@@ -419,28 +416,11 @@
         });
     </script>
     
-    <script type="module">
-        import {url} from "./Baselink.js"
-        console.log(url)
+
+    <script>
         const admin = document.getElementById("adminbtn")
-        console.log(admin)
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value.trim();
-    
-        // Basic validation
-        if (!email || !password) {
-            alert('Please fill in both fields');
-            return;
-        }
         admin.addEventListener("click",()=>{
-            console.log("clicked")
-            try {
-                axios.post(`${url}/auth/check-admin`)
-                .then((resp)=>{console.log(resp.data)})
-                .catch((err)=>{console.log(err)})
-            } catch (error) {
-                console.error(error)
-            }
+            window.location.href="/adminSignin.html"
         })
     </script>
 </body>
