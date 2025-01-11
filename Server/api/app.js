@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Routes importing
 import { authRouter } from '../routes/auth.routes.js';
 import { profileRouter } from '../routes/profile.routes.js';
+import { subRouter } from '../routes/sub.routes.js';
 
 // Routes
 app.use("/api/auth", authRouter)
