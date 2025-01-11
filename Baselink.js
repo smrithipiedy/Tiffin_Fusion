@@ -1,3 +1,6 @@
-const url = "http://localhost:3000"
+const localURL = "http://localhost:3000";
+const prodURL = "https://tiffin-fusion.onrender.com";
 
-export {url}
+const url = prodURL;
+
+export { url };
