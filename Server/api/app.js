@@ -19,5 +19,6 @@ import { profileRouter } from '../routes/profile.routes.js';
 // Routes
 app.use("/api/auth", authRouter)
 app.use("/api/profile", profileRouter)
+app.use("/api/newsletter", subRouter);
 
 export { app };
