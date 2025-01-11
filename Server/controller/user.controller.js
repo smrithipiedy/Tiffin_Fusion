@@ -44,17 +44,17 @@ export const registerUser = async (req, res) => {
 // User Login
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
-
+  console.log("login hit")
   try {
     const user = await User.findOne({ email });
-
+    console.log(user)
     if (!user) {
       console.log("User does not exist");
       return res.status(400).send({ message: 'Invalid credentials user' });
     }
-
+    console.log(password)
     const isPasswordMatch = await user.matchPassword(password);
-
+    console.log(isPasswordMatch)
     if (!isPasswordMatch) {
       console.log("Password doesn't match");
       return res.status(400).send({ message: 'Invalid credentials password' });
