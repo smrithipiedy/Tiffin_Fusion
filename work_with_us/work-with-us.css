@@ -338,3 +338,68 @@ form button:active {
     }
   }
   
+
+
+
+  /* Footer Styling */
+footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  font-family: 'Arial', sans-serif;
+  color: #6c757d;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  /* max-width: 1200px; */
+  margin: auto 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.footer-section {
+  margin: 20px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons li a {
+  font-size: 20px;
+  color: #6c757d;
+}
