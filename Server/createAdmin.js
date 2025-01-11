@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import User from "./models/user.model.js";
 
 const createAdmin = async () => {
-  await mongoose.connect("mongodb+srv://arkabasak62:1234@cluster0.le67o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+  await mongoose.connect("mongo_url");
 
   const adminUser = {
     username: 'admin4',
