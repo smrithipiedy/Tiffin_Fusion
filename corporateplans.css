@@ -47,6 +47,11 @@ body {
     height: 350px;
     perspective: 1000px;
     cursor: pointer;
+    transition: transform 0.5s;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-inner {
@@ -54,11 +59,7 @@ body {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.8s;
-}
-
-.daily-plan-card:hover .card-inner {
-    transform: rotateY(180deg);
+    transition: transform 0.5s;
 }
 
 .card-front,
@@ -103,6 +104,7 @@ body {
     font-weight: bold;
 }
 
+/* Back side of card */
 .card-back {
     background: #fff;
     color: #333;
@@ -126,6 +128,16 @@ body {
 .card-back ul li {
     font-size: 1rem;
     margin: 5px 0;
+}
+
+/* Zoom-in Effect on Touch */
+.daily-plan-card:hover .card-inner {
+    transform: scale(1.1);
+}
+
+.daily-plan-card:hover ~ .daily-plan-card {
+    opacity: 0.5;
+    transform: scale(0.9);
 }
 
 /* Responsive Design */
