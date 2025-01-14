@@ -13,11 +13,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes importing
+import { basicRouter } from '../routes/basic.routes.js';
 import { authRouter } from '../routes/auth.routes.js';
 import { profileRouter } from '../routes/profile.routes.js';
+import { subRouter } from '../routes/sub.routes.js';
 
 // Routes
+app.use('/api', basicRouter)
 app.use("/api/auth", authRouter)
 app.use("/api/profile", profileRouter)
+app.use("/api/newsletter", subRouter);
 
 export { app };
