@@ -94,7 +94,7 @@
             box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.1);
         }
         
-        .password-toggle {
+        #password-toggle {
             position: absolute;
             right: 15px;
             top: 45px;
@@ -277,7 +277,7 @@
                     <input type="password" id="password" required
                            minlength="8"
                            placeholder="Enter your password">
-                    <span class="password-toggle">👁️</span>
+                    <span id="password-toggle">👁️</span>
                     <span class="validation-message">Password must be at least 8 characters long</span>
                 </div>
     
@@ -315,7 +315,7 @@
             </div>
         </div>
     </div>
-    
+    <script type="module" src="./signin.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
     <script type="module">
