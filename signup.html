@@ -131,7 +131,7 @@
             box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.1);
         }
 
-        .password-toggle {
+        #password-toggle {
             position: absolute;
             right: 15px;
             top: 45px;
@@ -312,7 +312,7 @@
                 <div class="input-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" required minlength="8" placeholder="Create a password">
-                    <span class="password-toggle">👁️</span>
+                    <span id="password-toggle">👁️</span>
                 </div>
 
                 <div class="input-group">
@@ -351,10 +351,10 @@
             </div>
         </div>
     </div>
+    <script type="module" src="./signup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
     <script type="module">
         import { url } from "./Baselink.js";
-        console.log(url);
 
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('signupForm');
@@ -362,13 +362,7 @@
             const confirmPasswordInput = document.getElementById('confirmPassword');
             const passwordToggle = document.querySelector('.password-toggle');
 
-            // Password visibility toggle
-            passwordToggle.addEventListener('click', () => {
-                const type = passwordInput.type === 'password' ? 'text' : 'password';
-                passwordInput.type = type;
-                confirmPasswordInput.type = type;
-                passwordToggle.textContent = type === 'password' ? '👁️' : '🙈';
-            });
+            
 
             // Form submission logic
             form.addEventListener('submit', async (event) => {
@@ -414,6 +408,7 @@
         console.log("not logged in")
     }
 </script>
+
 
 </body>
 
