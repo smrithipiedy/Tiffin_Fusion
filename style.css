@@ -9,6 +9,16 @@ body{
     text-align: center;
   }
 
+  .signinbtn{
+    background-color: #f44336;
+    color: white !important;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
 /* Loader CSS */
 .loader {
   background-color: #Ea3c53;

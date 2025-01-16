@@ -1,88 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="Utils/20240921_154411.png">
   <title>Corporate Meal Plans</title>
   <link rel="stylesheet" href="corporateplans.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Header -->
-  <header class="navbar">
-    <a href="index.html" class="nav-link">Back to Home</a>
-  </header>
+  <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand text-black" href="./index.html">
+        <img src="Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
+        Tiffin Fusion
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Home Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#home">Home</a>
+          </li>
+
+          <!-- View Menu Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+          </li>
+
+          <!-- Meal Plan Dropdown -->
+          <li class="nav-item dropdown meal-plan">
+            <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
+              Meal Plans
+            </a>
+            <ul class="dropdown-menu" id="mealPlanMenu">
+              <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+              <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
+              <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
+            </ul>
+          </li>
+
+          <!-- About Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#who-we-are">About</a>
+          </li>
+
+          <!-- Contact Us Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+          </li>
+
+          <!-- Contributors Link -->
+          <li class="nav-item">
+            <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
+          </li>
+
+          <!-- Sign In Link -->
+          <li class="nav-item">
+            <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+          </li>
+        </ul>
+      </div>
+  </nav>
 
   <!-- Corporate Meal Plans Section -->
   <section id="meal-plans" class="daily-plan-section">
     <h2 class="section-title">Corporate Meal Plans</h2>
-    <div class="daily-plan-container">
-      <!-- Breakfast Plan -->
-      <div class="daily-plan-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="Utils/corp-1.png" alt="Continental Breakfast Platter" class="card-image">
-            <div class="card-overlay">
-              <h3 class="meal-name">Breakfast Plan</h3>
-              <p class="price">₹650</p>
+
+    <!-- Vegetarian Options Section -->
+    <div class="meal-section">
+      <h2 class="meal-category">Vegetarian Options</h2>
+      <div class="daily-plan-container">
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/veg1.jpg" alt="Vegetarian Pasta" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Paneer Butter Masala</h4>
+                <p class="price">₹600</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Paneer Butter masala</h4>
             </div>
           </div>
-          <div class="card-back">
-            <h3>Continental Breakfast Platter</h3>
-            <ul>
-              <li>Assorted Pastries</li>
-              <li>Scrambled Eggs</li>
-              <li>Fresh Fruit Juices</li>
-              <li>Whole Wheat Toast</li>
-            </ul>
+        </div>
+        <!-- Additional cards -->
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/veg2.jpg" alt="Vegetable Stir-fry" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Paneer Tikka Masala</h4>
+                <p class="price">₹580</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Paneer Tikka Masala</h4>
+            </div>
+          </div>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/veg3.jpg" alt="Stuffed Bell Peppers" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Palak Paneer</h4>
+                <p class="price">₹620</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Palak Paneer</h4>
+            </div>
+          </div>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/veg4.jpg" alt="Spinach and Ricotta Rolls" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Mix Veg</h4>
+                <p class="price">₹650</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Mix Veg</h4>
+            </div>
+          </div>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/veg5.jpg" alt="Zucchini Noodles" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Vegetable Rice</h4>
+                <p class="price">₹590</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Vegetable Rice</h4>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Lunch Plan -->
-      <div class="daily-plan-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="Utils/corp-2.png" alt="Grilled Chicken Salad" class="card-image">
-            <div class="card-overlay">
-              <h3 class="meal-name">Lunch Plan</h3>
-              <p class="price">₹750</p>
+    <!-- Non-Vegetarian Options Section -->
+    <div class="meal-section">
+      <h2 class="meal-category">Non-Vegetarian Options</h2>
+      <div class="daily-plan-container">
+        <!-- First card -->
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/nonveg1.jpg" alt="Chicken Curry with Rice" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Chicken Curry with Naan/Roti</h4>
+                <p class="price">₹750</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Chicken Curry with Rice</h4>
             </div>
           </div>
-          <div class="card-back">
-            <h3>Grilled Chicken Salad</h3>
-            <ul>
-              <li>Grilled Chicken Breast</li>
-              <li>Mixed Greens</li>
-              <li>Cherry Tomatoes</li>
-              <li>Vinaigrette Dressing</li>
-            </ul>
+        </div>
+        <!-- Second card -->
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/nonveg2.jpg" alt="Grilled Fish with Veggies" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Mutton Curry with Appam</h4>
+                <p class="price">₹800</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Grilled Fish with Veggies</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Third card -->
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/nonveg3.jpg" alt="Pork Chop with Vegetables" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta</h4>
+                <p class="price">₹850</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Fourth card -->
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/nonveg4.png" alt="Grilled Fish with Quinoa and Roasted Veggies"
+                class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Grilled Fish with Quinoa and Roasted Veggies</h4>
+                <p class="price">₹950</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Grilled Fish with Quinoa and Roasted Veggies</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Fifth card -->
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/nonveg5.jpg" alt="Chicken Skewers" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Chicken Curry with Rice</h4>
+                <p class="price">₹700</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Chicken Curry with Rice</h4>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Dinner Plan -->
-      <div class="daily-plan-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="Utils/corp-3.png" alt="Baked Salmon with Vegetables" class="card-image">
-            <div class="card-overlay">
-              <h3 class="meal-name">Dinner Plan</h3>
-              <p class="price">₹700</p>
+    <!-- Vegan Alternatives Section -->
+    <div class="meal-section">
+      <h2 class="meal-category">Vegan Alternatives</h2>
+      <div class="daily-plan-container">
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/vegan1.jpg" alt="Quinoa Bowl with Veggies" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Lentil Curry with Steamed Brown Rice and Vegan Raita</h4>
+                <p class="price">₹550</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Lentil Curry with Steamed Brown Rice and Vegan Raita</h4>
             </div>
           </div>
-          <div class="card-back">
-            <h3>Baked Salmon with Vegetables</h3>
-            <ul>
-              <li>Oven-Baked Salmon Fillet</li>
-              <li>Steamed Broccoli</li>
-              <li>Quinoa Pilaf</li>
-              <li>Garlic Butter Sauce</li>
-            </ul>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/vegan2.jpg" alt="Lentil Curry with Rice" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Tofu Masala Curry with Coconut Rice</h4>
+                <p class="price">₹580</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Tofu Masala Curry with Coconut Rice</h4>
+            </div>
+          </div>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/vegan3.jpeg" alt="Tofu Stir-fry" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies</h4>
+                <p class="price">₹560</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies</h4>
+            </div>
+          </div>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/vegan4.jpg" alt="Eggplant Parmesan" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Lentil & Spinach Soup with Quinoa</h4>
+                <p class="price">₹600</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Lentil & Spinach Soup with Quinoa</h4>
+            </div>
+          </div>
+        </div>
+        <div class="daily-plan-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./corporateplans/vegan5.jpg" alt="Vegan Tacos" class="card-image">
+              <div class="card-overlay">
+                <h4 class="meal-name">Chickpea and Vegetable Curry with Basmati Rice</h4>
+                <p class="price">₹570</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <h4>Chickpea and Vegetable Curry with Basmati Rice</h4>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </body>
+
 </html>
