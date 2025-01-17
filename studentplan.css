@@ -26,6 +26,16 @@ body {
     color: #d32f2f; /* Highlighted: Changed hover color for navbar links */
 }
 
+.signinbtn{
+    background-color: #f44336;
+    color: white !important;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
 .section-title {
     text-align: center;
     font-size: 2rem;
