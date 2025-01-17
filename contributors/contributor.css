@@ -551,7 +551,7 @@ footer {
 .contributor-card button {
   margin-top: 12px;
   padding: 10px 16px;
-  background-color:cadetblue;
+  background-color:cadetblue; 
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -561,4 +561,22 @@ footer {
 .contributor-card button:hover {
   background-color:rgb(83, 160, 162);
   transform: translateY(-2px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .contributor-card {
+    width: 90%; /* Adjust card width */
+    margin: 10px auto;
+  }
+
+  .contributor-card h3 {
+    font-size: 1em; /* Adjust font size */
+  }
+
+  .contributor-card button {
+    font-size: 0.9em; /* Smaller button text */
+    padding: 8px 12px;
+    margin-left:10px;
+  }
 }
