@@ -34,7 +34,7 @@ async function fetchContributors() {
       img.alt = contributor.login;
 
       // GitHub username
-      const name = document.createElement("h3");
+      const name = document.createElement("h5");
       name.textContent = contributor.login;
 
       // GitHub profile link
