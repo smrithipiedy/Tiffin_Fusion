@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lodge Complaint - Tiffin Fusion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #FE5E68;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #FE5E68;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            padding: 4px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input::placeholder, textarea::placeholder {
+            padding-left: 5px;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #FE5E68;
+            box-shadow: 0 0 5px #FE5E68;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #FE5E68;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e74c57;
+        }
+
+        .required {
+            color: #FE5E68;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tiffin Fusion - Lodge a Complaint</h1>
+    </header>
+    <div class="container">
+        <h2>We Value Your Feedback</h2>
+        <form action="#" method="POST">
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="order-id">Order ID</label>
+            <input type="text" id="order-id" name="order-id" placeholder="Enter your order ID (if applicable)">
+
+            <label for="complaint-category">Complaint Category <span class="required">*</span></label>
+            <select id="complaint-category" name="complaint-category" required>
+                <option value="">-- Select a category --</option>
+                <option value="food-quality">Food Quality Issue</option>
+                <option value="delivery-delay">Delivery Delay</option>
+                <option value="wrong-order">Wrong Order Delivered</option>
+                <option value="payment-issue">Payment Issue</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="description">Description <span class="required">*</span></label>
+            <textarea id="description" name="description" placeholder="Provide detailed information about your issue" required></textarea>
+
+            <label for="attachment">Attachment (Optional)</label>
+            <input type="file" id="attachment" name="attachment" accept="image/*,application/pdf">
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+</body>
+</html>
