@@ -1,27 +1,96 @@
-body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  section {
-    padding: 60px 0;
-    text-align: center;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-  .signinbtn{
-    background-color: #f44336;
-    color: white !important;
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 3px;
-  }
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 60px 0;
+  text-align: center;
+}
+body.dark {
+  background-color: #292c35;
+} /* #9b59b6 */
+
+
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/*  Support me if you like it */
+.support {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.support a {
+  color: #292c35;
+  font-size: 32px;
+  backface-visibility: hidden;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support a:hover {
+  transform: scale(1.1);
+}
+.signinbtn {
+  background-color: #f44336;
+  color: white !important;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 3px;
+}
 
 /* Loader CSS */
 .loader {
-  background-color: #Ea3c53;
+  background-color: #ea3c53;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -104,7 +173,8 @@ body{
 }
 
 @keyframes imagePulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -113,7 +183,8 @@ body{
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) { /* Tablets */
+@media (max-width: 768px) {
+  /* Tablets */
   .pulse {
     width: 250px;
     height: 250px;
@@ -127,7 +198,8 @@ body{
   }
 }
 
-@media (max-width: 480px) { /* Phones */
+@media (max-width: 480px) {
+  /* Phones */
   .pulse {
     width: 200px;
     height: 200px;
@@ -149,13 +221,16 @@ body{
 #main-content.visible {
   opacity: 1;
 }
-  
- /* Navbar General Styles */
+
+/* Navbar General Styles */
 .navbar {
   background-color: #f8f9fa;
   border-bottom: 1px solid #ccc;
   padding: 0.5rem 1rem;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-brand {
@@ -202,7 +277,7 @@ body{
 }
 
 .nav-item a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -247,7 +322,7 @@ body{
 
 /* Red line effect on hover for Meal Plan */
 .nav-item.meal-plan a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -284,16 +359,7 @@ body{
   min-width: 180px; /* Optional, you can adjust the width */
 }
 
-
-
-
-
-
-
 /* sign in css */
-
-
-
 
 .auth-container {
   display: flex;
@@ -338,7 +404,7 @@ body{
 .auth-btn {
   width: 100%;
   padding: 12px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -351,13 +417,15 @@ body{
   background-color: #45a049;
 }
 
-.signup-option, .signin-option {
+.signup-option,
+.signin-option {
   text-align: center;
   margin-top: 20px;
 }
 
-.signup-option a, .signin-option a {
-  color: #4CAF50;
+.signup-option a,
+.signin-option a {
+  color: #4caf50;
   text-decoration: none;
   font-weight: bold;
 }
@@ -374,61 +442,56 @@ body{
   display: block;
 }
 
-
-
-
-  
-  /* Hero Section */
-  .hero-section {
-    position: relative;
-    background-image: url('Utils/food-compressed.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url("Utils/food-compressed.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
 .hero-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px 40px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
 }
 
 .hero-content h1 {
-    color: #8B0000; 
-    font-size: 36px;
-    margin-bottom: 10px;
+  color: #8b0000;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-    color: #555;
-    font-size: 16px;
-    margin-bottom: 20px;
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .hero-content .btn-primary {
-    background-color: #FC0635;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  background-color: #fc0635;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .hero-content .btn-primary:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-form{
-    /* From Uiverse.io by Yaya12085 */ 
-.btn {
+form {
+  /* From Uiverse.io by Yaya12085 */
+  .btn {
     position: relative;
     outline: 0;
     border: 1px solid transparent;
@@ -449,7 +512,7 @@ form{
     overflow: hidden;
     box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
   }
-  
+
   .btn span {
     height: 100%;
     width: 100%;
@@ -457,36 +520,38 @@ form{
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
   }
-  
+
   button svg {
     width: 1.25rem;
     height: 1.25rem;
   }
-  
-  .btn span:nth-child(2),.btn span:nth-child(3) {
+
+  .btn span:nth-child(2),
+  .btn span:nth-child(3) {
     position: absolute;
     top: 40px;
     color: #fff;
   }
-  
+
   .btn span:nth-child(2) {
     background-color: #d96558;
   }
-  
+
   .btn span:nth-child(3) {
     background-color: #e14331;
   }
-  
+
   .btn:hover {
     box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
   }
-  
-  .btn:hover span:nth-child(2), .btn:focus span:nth-child(3) {
+
+  .btn:hover span:nth-child(2),
+  .btn:focus span:nth-child(3) {
     top: 0;
   }
-  
+
   .btn:focus {
     box-shadow: none;
   }
@@ -509,7 +574,7 @@ body {
   text-align: center;
   align-items: center;
   background-color: #f9f9f9;
-  font-family: 'Cosmic Sans MS', cursive, sans-serif;
+  font-family: "Cosmic Sans MS", cursive, sans-serif;
   font-weight: 400;
   font-style: normal;
   margin-bottom: -20px;
@@ -713,70 +778,65 @@ body {
 
 /* Menu Section Ends */
 
+/* Service Section */
+.section-menu {
+  background-color: white;
+}
 
+.section-menu h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
 
-  /* Service Section */
-  .section-menu {
-    background-color: white;
+/* Student Plan Section */
+.section-student-plan {
+  background-color: #6c757d;
+  color: white;
+}
+
+.section-student-plan h2 {
+  font-size: 2.5rem;
+  color: #ffdd57;
+}
+
+/* About Section */
+.section-about {
+  background-color: #f8f9fa;
+}
+
+.section-about h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Contact Section */
+.section-contact {
+  background-color: #343a40;
+  color: white;
+}
+
+.section-contact h2 {
+  font-size: 2.5rem;
+  color: #ffdd57;
+}
+
+/* Responsive Grid for Navbar */
+@media (max-width: 768px) {
+  .navbar-nav {
+    grid-template-columns: 1fr; /* Stack items in mobile view */
+    text-align: center;
   }
-  
-  .section-menu h2 {
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
-  /* Student Plan Section */
-  .section-student-plan {
-    background-color: #6c757d;
-    color: white;
-  }
-  
-  .section-student-plan h2 {
-    font-size: 2.5rem;
-    color: #ffdd57;
-  }
-  
-  /* About Section */
-  .section-about {
-    background-color: #f8f9fa;
-  }
-  
-  .section-about h2 {
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
-  /* Contact Section */
-  .section-contact {
-    background-color: #343a40;
-    color: white;
-  }
-  
-  .section-contact h2 {
-    font-size: 2.5rem;
-    color: #ffdd57;
-  }
-  
-  /* Responsive Grid for Navbar */
-  @media (max-width: 768px) {
-    .navbar-nav {
-      grid-template-columns: 1fr; /* Stack items in mobile view */
-      text-align: center;
-    }
-  }
-  
+}
+
 /************************************************************************/
 
 .section-menu {
   padding: 40px 0;
 }
 
-
-
-
 /* Font styles for the headings */
 #menu h2 {
-  font-family: 'Cosmic Sans MS', cursive, sans-serif; /* Use a bold font for the heading */
+  font-family: "Cosmic Sans MS", cursive, sans-serif; /* Use a bold font for the heading */
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
@@ -785,13 +845,12 @@ body {
 
 /* Font styles for the circle descriptions (p tags) */
 #menu p {
-  font-family: 'Cosmic Sans MS', cursive, sans-serif; /* Use a clean font for descriptions */
+  font-family: "Cosmic Sans MS", cursive, sans-serif; /* Use a clean font for descriptions */
   font-weight: 500;
   font-size: 14px;
   color: #000000; /* Optional: Adjust text color */
   margin-top: 10px;
 }
-
 
 .circle-container {
   text-align: center;
@@ -814,11 +873,16 @@ body {
 }
 
 .circle:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.4), rgba(0, 123, 255, 0.2), transparent);
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.4),
+    rgba(0, 123, 255, 0.2),
+    transparent
+  );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -849,7 +913,8 @@ body {
 
 /* Keyframes for idle bounce */
 @keyframes idleBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -898,12 +963,7 @@ body {
   .circle i {
     font-size: 16px; /* Smaller icons for mobile */
   }
-
-
 }
-
-
-
 
 /******************************************************/
 /* Section Styling */
@@ -912,7 +972,6 @@ body {
   text-align: center;
   background-color: #f9f9f9;
 }
-
 
 .section-title {
   font-size: 2.5rem;
@@ -923,7 +982,10 @@ body {
 /* Student Plan Container */
 .student-plan-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid with responsive card size */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Grid with responsive card size */
   gap: 20px; /* Space between the cards */
   justify-items: center;
   align-items: stretch;
@@ -1017,12 +1079,12 @@ body {
 
 .price {
   font-weight: bold;
-  color: #E53935; /* Price in red */
+  color: #e53935; /* Price in red */
   font-size: 1.2rem;
 }
 
 .flip-card-back {
-  background-color: #E53935;
+  background-color: #e53935;
   color: white;
   display: flex;
   flex-direction: column;
@@ -1051,7 +1113,7 @@ body {
 
 .view-more-button {
   display: inline-block;
-  background-color: #E53935;
+  background-color: #e53935;
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
@@ -1133,45 +1195,40 @@ body {
   }
 }
 
-
-
-
 html {
   scroll-behavior: smooth;
 }
 
-
-
 /**************************/
 
- /* Scroll to Top Button */
+/* Scroll to Top Button */
 #scrollToTopBtn {
   position: fixed;
-  bottom: 50px;  /* Position it 50px above the bottom */
-  right: 40px;   /* Position it 40px from the right edge */
+  bottom: 50px; /* Position it 50px above the bottom */
+  right: 40px; /* Position it 40px from the right edge */
   z-index: 99;
-  background-color: red;  /* Button color */
+  background-color: red; /* Button color */
   color: white;
   border: none;
   outline: none;
-  width: 50px;   /* Size of the button */
-  height: 50px;  
-  border-radius: 50%;   /* Circular shape */
+  width: 50px; /* Size of the button */
+  height: 50px;
+  border-radius: 50%; /* Circular shape */
   cursor: pointer;
-  display: none;  /* Hidden by default */
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);   /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
   transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
 #scrollToTopBtn:hover {
-  background-color: red;  /* Darker red on hover */
-  transform: scale(1.1);  /* Slight zoom on hover */
+  background-color: red; /* Darker red on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 #scrollToTopBtn i {
-  font-size: 20px;   /* Icon size */
+  font-size: 20px; /* Icon size */
 }
 
 /* Responsive Adjustments */
@@ -1179,7 +1236,7 @@ html {
 /* Tablets and below */
 @media (max-width: 992px) {
   #scrollToTopBtn {
-    bottom: 30px;  /* Shift upwards */
+    bottom: 30px; /* Shift upwards */
     right: 30px;
     width: 45px;
     height: 45px;
@@ -1193,7 +1250,7 @@ html {
 /* Mobile Phones */
 @media (max-width: 576px) {
   #scrollToTopBtn {
-    bottom: 100px;   /* Shift further upwards */
+    bottom: 100px; /* Shift further upwards */
     right: 20px;
     width: 40px;
     height: 40px;
@@ -1203,7 +1260,6 @@ html {
     font-size: 16px;
   }
 }
-
 
 /***********************************************************/
 /* Blog section styling */
@@ -1243,7 +1299,7 @@ html {
 
 /* Title and paragraph */
 .who-we-are h2 {
-  font-family: 'Cosmic Sans MS', cursive, sans-serif;;
+  font-family: "Cosmic Sans MS", cursive, sans-serif;
   font-size: 2.5em;
   margin-bottom: 10px;
   position: relative;
@@ -1258,11 +1314,14 @@ html {
   animation: animateLine 1.5s ease-in;
 }
 
-
 /* Animation for red line */
 @keyframes animateLine {
-  0% {width: 0;}
-  100% {width: 60px;}
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60px;
+  }
 }
 
 .who-we-are p {
@@ -1350,7 +1409,7 @@ html {
   display: inline-block; /* Inline block for button */
   margin-top: 10px; /* Space above button */
   padding: 10px 15px; /* Padding inside button */
-  background: #007BFF; /* Button background color */
+  background: #007bff; /* Button background color */
   color: #fff; /* Button text color */
   text-decoration: none; /* Remove underline */
   border-radius: 5px; /* Rounded corners for button */
@@ -1361,55 +1420,46 @@ html {
   background: #e03e00; /* Darker shade on hover */
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .who-we-are {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .cards-container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .image-container img {
-      max-width: 100%;
+    max-width: 100%;
   }
 }
-
-
-
 
 /************************************************************/
 /* Contact Us Section Styling */
 #contact-us {
-  background-image: url('Utils/contact us2.jpg'); /* Replace with your image URL */
+  background-image: url("Utils/contact us2.jpg"); /* Replace with your image URL */
   background-size: cover;
   background-position: center;
   padding: 60px 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: #fff;
 }
 
 .contact-header {
- 
   text-align: center;
   margin-bottom: 40px;
-   
 }
 
 .contact-header h2 {
-  font-family: 'Cosmic Sans MS', cursive, sans-serif;
+  font-family: "Cosmic Sans MS", cursive, sans-serif;
   font-size: 36px;
   color: #f0f0f0;
   text-align: center;
 
   /* For modern browsers */
   -webkit-text-stroke: 1px rgb(0, 0, 0); /* Black border with 1px width */
-  
+
   /* Fallback for older browsers using text-shadow */
-  text-shadow: 
-    1px 1px 0 black,
-    -1px 1px 0 black,
-    1px -1px 0 black,
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
     -1px -1px 0 black;
 }
 
@@ -1419,7 +1469,12 @@ html {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.9); /* Transparent background for readability */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Transparent background for readability */
   padding: 40px;
   border-radius: 10px;
 }
@@ -1443,21 +1498,19 @@ html {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-} 
-.contact-form input:hover
-{
-    border-color:#da1d08;
 }
-.contact-form input:focus
-{
-    outline:rgb(214, 5, 5);
+.contact-form input:hover {
+  border-color: #da1d08;
 }
-.contact-form select option:hover{
-  background:#de5d4e;
+.contact-form input:focus {
+  outline: rgb(214, 5, 5);
+}
+.contact-form select option:hover {
+  background: #de5d4e;
 }
 
 /* .contact-form button { */
-  /* padding: 12px 20px;
+/* padding: 12px 20px;
   background-color: #d25749;
   color: #fff;
   border: none;
@@ -1505,15 +1558,11 @@ html {
     grid-template-columns: 1fr;
   }
 
-  .contact-form, .contact-info {
+  .contact-form,
+  .contact-info {
     margin-bottom: 20px;
   }
 }
-
-
-
-
-
 
 /**********************************************************/
 /**********************************************************/
@@ -1522,7 +1571,7 @@ html {
 footer {
   background-color: #f8f9fa;
   padding: 40px 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: #6c757d;
 }
 
@@ -1586,7 +1635,7 @@ footer {
   grid-column: span 4; /* span across all sections */
   padding: 30px;
   background-color: #ffffff;
-  background-image: url('https://media.istockphoto.com/id/666193858/photo/indian-vegetarian-office-or-school-lunch-box-or-tiffin-with-north-indian-or-maharashtrian.jpg?s=612x612&w=0&k=20&c=Ac-U7hY1leIuM97jLNPqzv7SX5DbZofu5p_pfUCgeJA=');
+  background-image: url("https://media.istockphoto.com/id/666193858/photo/indian-vegetarian-office-or-school-lunch-box-or-tiffin-with-north-indian-or-maharashtrian.jpg?s=612x612&w=0&k=20&c=Ac-U7hY1leIuM97jLNPqzv7SX5DbZofu5p_pfUCgeJA=");
   text-align: center;
   margin-top: 20px;
   border-radius: 8px;
@@ -1594,12 +1643,11 @@ footer {
 }
 
 .footer-section.newsletter h2 {
-  font-family: 'Cosmic Sans MS', cursive, sans-serif;
+  font-family: "Cosmic Sans MS", cursive, sans-serif;
   font-size: 22px;
   color: #ea0202;
   margin-bottom: 15px;
   text-shadow: 1px 1px 0 black;
-                 
 }
 
 .footer-section.newsletter p {
@@ -1641,7 +1689,11 @@ footer {
 }
 
 .footer-section.newsletter .subscribe-btn:hover {
-  background: linear-gradient(90deg, #ff0000, #ff5722); /* Reverse gradient on hover */
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff5722
+  ); /* Reverse gradient on hover */
   transform: translateY(-3px); /* Button hover animation */
 }
 
@@ -1652,11 +1704,8 @@ footer {
   font-size: 14px;
 }
 
-
-
-
- /* Contributors Button */
- #contributorsBtn {
+/* Contributors Button */
+#contributorsBtn {
   position: fixed;
   bottom: 115px; /* Shifted upward by half the radius (50px / 2 = 25px more) */
   right: 40px; /* Positioned at the right corner */
@@ -1746,25 +1795,24 @@ footer {
 @media (max-width: 920px) {
   /* Adjust image sizes */
   .footer-section.newsletter img {
-      width: 250px; /* Smaller images */
-      opacity: 0.5; /* Slight transparency for cleaner look */
+    width: 250px; /* Smaller images */
+    opacity: 0.5; /* Slight transparency for cleaner look */
   }
 
   /* Center left image */
   .tiffin-left {
-      top: 50%; 
-      left: 50%; /* Center horizontally */
-      transform: translate(-50%, -50%); /* Fully centered */
+    top: 50%;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Fully centered */
   }
 
   /* Hide right image */
   .tiffin-right {
-      display: none;
+    display: none;
   }
 
   /* Adjust padding for mobile */
   .footer-section.newsletter {
-      padding: 30px 10px;
+    padding: 30px 10px;
   }
 }
-
