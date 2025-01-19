@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./checkout.css">
+</head>
+<body>
+
+  <h2>Your Cart</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items-table-body">
+      <!-- Cart items will be dynamically inserted here -->
+    </tbody>
+  </table>
+
+  <button id="clear-cart" onclick="clearCart()">Clear Cart</button>
+  <button id="checkout" onclick="checkout()">Proceed to Checkout</button>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

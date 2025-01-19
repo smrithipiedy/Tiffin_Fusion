@@ -10,6 +10,13 @@ body {
     padding: 0;
   }
   
+  #cart-modal .modal-dialog {
+    max-width: 800px;
+  }
+  #cart-items tr td {
+    vertical-align: middle;
+  }
+  
   .men-head {
     text-align: center;
     align-items: center;
