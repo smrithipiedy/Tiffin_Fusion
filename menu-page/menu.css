@@ -1,35 +1,4 @@
 body {
-<<<<<<< HEAD
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    overflow-x: hidden;
-  }
-  
-  #menu-section {
-    padding: 0;
-  }
-  
-  #cart-modal .modal-dialog {
-    max-width: 800px;
-  }
-  #cart-items tr td {
-    vertical-align: middle;
-  }
-  
-  .men-head {
-    text-align: center;
-    align-items: center;
-    background-color: #f9f9f9;
-    font-family: 'Cosmic Sans MS', cursive, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: -20px;
-    padding: 10px 0;
-  }
-  
-=======
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -184,7 +153,6 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
->>>>>>> 164e7a372dd98949e88518b6313fa35dd83f0de9
   .menu-section {
     grid-template-columns: 1fr;
     padding: 20px 70px;
