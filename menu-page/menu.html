@@ -71,6 +71,15 @@
         <li class="nav-item">
           <a href="../signin.html" class="nav-link mx-2">Sign In</a>
         </li>
+
+        <!-- Cart Icon in Navbar -->
+        <li class="nav-item">
+          <a href="./checkout.html" id="cart-icon" class="nav-link mx-2">
+            <i class="fas fa-shopping-cart"></i> Cart
+          </a>
+        </li>     
+
+
       </ul>
     </div>
   </div>
@@ -100,8 +109,9 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/steamedrice.jpg" alt="steamed_rice" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
-          </div>
+            <button class="add-btn" onclick="addToCart('Steamed Rice', 150)">Add +</button>  <!-- Add button beside the image -->
+          </div><br>
+
         </div>
       </div>
 
@@ -120,7 +130,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/DalTadka.jpg" alt="Dal_Tadka" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn"  onclick="addToCart('Dal Tadka', 200)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -140,7 +150,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/DalMakhani.jpg" alt="Dal_Makhani" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Dal Makhani', 130)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -160,7 +170,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/VegetableCurry.jpg" alt="Vegetable_Curry" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Vegetable Curry', 150)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -179,7 +189,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/Mixed Vegetables.jpg" alt="Mixed_Vegetable" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Mixed Vegetable', 110)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -200,7 +210,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/AlooGobi.jpg" alt="Aloo_Gobi" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Aloo Gobhi', 70)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -219,7 +229,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/Chapati.jpg" alt="Chapati" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Chapati', 15)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -238,7 +248,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/Raita.jpg" alt="Raita" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Raita', 30)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -257,7 +267,7 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/Salad.jpg" alt="Salad" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Salad', 45)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
@@ -276,14 +286,17 @@
           </div>
           <div class="menu-image">
             <img src="menu_images/FruitSalad.jpg" alt="Fruit_Salad" />
-            <button class="add-btn">Add +</button>  <!-- Add button beside the image -->
+            <button class="add-btn" onclick="addToCart('Fruit Salad', 65)">Add +</button>  <!-- Add button beside the image -->
           </div>
         </div>
       </div>
     </section>
   </section>
+
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="app.js"></script>
-  <script src="submitQuery.js"></script>
+  <!-- <script src="../app.js"></script> -->
+  <!-- <script src="../submitQuery.js"></script> -->
+  <script src="./cart.js" defer></script>
 </body>
 </html>
