@@ -88,6 +88,13 @@
               <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
             </li>
 
+            <!-- Cart Icon in Navbar -->
+          <li class="nav-item">
+            <a href="./menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+              <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+          </li>
+
             <!-- Sign In Link -->
             <li class="nav-item">
               <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
@@ -396,6 +403,7 @@
               </div>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Healthy Meal Plan', 200)">Add +</button>
         </div>
 
         <!-- Plan 2 -->
@@ -418,6 +426,7 @@
               </div>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Classic Tiffin', 150)">Add +</button>
         </div>
 
         <!-- Plan 3 -->
@@ -440,6 +449,7 @@
               </div>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Budget Meal Plan', 100)">Add +</button>
         </div>
 
         <!-- View More Button -->
@@ -761,6 +771,8 @@
     })
 
   </script>
+  <script src="./menu-page/cart.js" defer></script>
+  <script src="./menu-page/checkout.js"></script>
 </body>
 
 </html>

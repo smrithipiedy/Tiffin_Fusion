@@ -6,6 +6,7 @@
   <link rel="icon" href="../Utils/20240921_154411.png">
   <title>Daily Meal Plans</title>
   <link rel="stylesheet" href="dailyplans.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <style>
     /* General Styling */
@@ -192,6 +193,7 @@ body {
               <h2>Price - Rs.330</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Maharashtrain Thali', 330)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -207,6 +209,7 @@ body {
               <h2>Price - Rs.400</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('South Indian Thali', 400)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -218,10 +221,11 @@ body {
               </div>
             </div>
             <div class="card-back">
-              <h3>Gujrathi Thali</h3>
+              <h3>Gujarati Thali</h3>
               <h2>Price - Rs.350</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Gujarati Thali', 350)">Add +</button>
         </div>
       </div>
   
@@ -240,6 +244,7 @@ body {
               <h2>Price - Rs.380</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Punjabi Thali', 380)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -255,6 +260,7 @@ body {
               <h2>Price - Rs.1110</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Bahubali Thali', 1110)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -270,9 +276,11 @@ body {
               <h2>Price - Rs.110</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Normal Thali', 110)">Add +</button>
         </div>
       </div>
     </section>
+    <script src="../menu-page/cart.js"></script>
   </body>
   
 </html>

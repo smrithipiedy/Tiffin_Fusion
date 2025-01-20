@@ -8,7 +8,7 @@
   <title>Corporate Meal Plans</title>
   <link rel="stylesheet" href="corporateplans.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -28,6 +28,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      
       <!-- Navbar Links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -68,12 +69,21 @@
             <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
           </li>
 
+          <!-- Cart Icon in Navbar -->
+          <li class="nav-item">
+            <a href="./menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+              <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+          </li>
+
           <!-- Sign In Link -->
           <li class="nav-item">
             <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
           </li>
         </ul>
       </div>
+
+
   </nav>
 
   <!-- Corporate Meal Plans Section -->
@@ -97,6 +107,7 @@
               <h4>Paneer Butter masala</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Paneer Butter Masala', 600)">Add +</button>
         </div>
         <!-- Additional cards -->
         <div class="daily-plan-card">
@@ -112,6 +123,7 @@
               <h4>Paneer Tikka Masala</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Paneer Tikka Masala', 580)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -126,6 +138,7 @@
               <h4>Palak Paneer</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Palak Paneer', 620)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -140,6 +153,7 @@
               <h4>Mix Veg</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Mix Veg', 650)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -153,9 +167,10 @@
             <div class="card-back">
               <h4>Vegetable Rice</h4>
             </div>
-          </div>
+          </div><button class="add-btn" onclick="addToCart('Vegetable Rice', 590)">Add +</button>
         </div>
       </div>
+      
     </div>
 
     <!-- Non-Vegetarian Options Section -->
@@ -176,6 +191,7 @@
               <h4>Chicken Curry with Rice</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Chicken Curry with Naan/Roti', 750)">Add +</button>
         </div>
         <!-- Second card -->
         <div class="daily-plan-card">
@@ -191,6 +207,7 @@
               <h4>Grilled Fish with Veggies</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Mutton Curry with Appam', 800)">Add +</button>
         </div>
         <!-- Third card -->
         <div class="daily-plan-card">
@@ -206,6 +223,7 @@
               <h4>Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta', 850)">Add +</button>
         </div>
         <!-- Fourth card -->
         <div class="daily-plan-card">
@@ -222,6 +240,7 @@
               <h4>Grilled Fish with Quinoa and Roasted Veggies</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Grilled Fish with Quinoa and Roasted Veggies', 950)">Add +</button>
         </div>
         <!-- Fifth card -->
         <div class="daily-plan-card">
@@ -236,8 +255,9 @@
             <div class="card-back">
               <h4>Chicken Curry with Rice</h4>
             </div>
-          </div>
+          </div><button class="add-btn" onclick="addToCart('Chicken Curry with Rice', 700)">Add +</button>
         </div>
+        
       </div>
     </div>
 
@@ -258,6 +278,7 @@
               <h4>Lentil Curry with Steamed Brown Rice and Vegan Raita</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Lentil Curry with Steamed Brown Rice and Vegan Raita', 550)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -272,6 +293,7 @@
               <h4>Tofu Masala Curry with Coconut Rice</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Tofu Masala Curry with Coconut Rice', 580)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -286,6 +308,7 @@
               <h4>Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies', 560)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -300,6 +323,7 @@
               <h4>Lentil & Spinach Soup with Quinoa</h4>
             </div>
           </div>
+          <button class="add-btn" onclick="addToCart('Lentil & Spinach Soup with Quinoa', 600)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -314,6 +338,7 @@
               <h4>Chickpea and Vegetable Curry with Basmati Rice</h4>
             </div>
           </div>
+        <button class="add-btn" onclick="addToCart('Chickpea and Vegetable Curry with Basmati Rice', 570)">Add +</button>
         </div>
       </div>
     </div>
@@ -381,8 +406,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script src="./menu-page/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
