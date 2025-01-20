@@ -729,6 +729,21 @@ body {
   }
 }
 
+.back-btn {
+  display: inline-block;
+  background-color: #e94c3d;
+  margin-right: 70vw;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.back-btn:hover {
+  background-color: #c9382e;
+}
+
 /* Media Query for screens below 500px */
 @media (max-width: 500px) {
   /* Reducing font size */
