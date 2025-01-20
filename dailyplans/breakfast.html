@@ -6,6 +6,7 @@
   <link rel="icon" href="../Utils/20240921_154411.png">
   <title>Daily Meal Plans</title>
   <link rel="stylesheet" href="dailyplans.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <style>
     /* General Styling */
@@ -169,6 +170,7 @@ body {
 
 </style>
 <body>
+  
     <!-- Header -->
     <header class="navbar">
       <a href="../dailyplans.html" class="nav-link">Back</a>
@@ -185,14 +187,15 @@ body {
             <div class="card-front">
               <img src="break1.jpg" alt="Breakfast Plan" class="card-image">
               <div class="card-overlay">
-                <h3 class="meal-name">Bread Amlete</h3>
+                <h3 class="meal-name">Bread Omlete</h3>
               </div>
             </div>
             <div class="card-back">
-              <h3>Bread Amlet</h3>
+              <h3>Bread Omlete</h3>
               <h2>Price - Rs.190</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Bread Omlete', 190)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -208,6 +211,7 @@ body {
               <h2>Price - Rs.200</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Puri Bhaji', 200)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -222,8 +226,9 @@ body {
               <h3>Appam</h3>
               <h2>Price - Rs.70</h2>
             </div>
-          </div>
+          </div><button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Appam', 70)">Add +</button>
         </div>
+        
       </div>
   
       <!-- Second Row -->
@@ -241,6 +246,7 @@ body {
               <h2>Price - Rs.80</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Idli', 80)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -255,6 +261,7 @@ body {
               <h2>Price - Rs.65</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Upma', 65)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -270,9 +277,11 @@ body {
               <h2>Price - Rs.110</h2>
             </div>
           </div>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Rava Dosa', 110)">Add +</button>
         </div>
       </div>
     </section>
+    <script src="../menu-page/cart.js"></script>
   </body>
   
 </html>

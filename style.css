@@ -1704,6 +1704,38 @@ footer {
   font-size: 14px;
 }
 
+/* Add Button */
+.add-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fcfcfc;
+  background-color: #7fd153;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #0baa64;
+}
+
+.add-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(13, 200, 115, 0.5);
+}
+
+.add-btn:active {
+  background-color: #0a9554;
+}
+
+
 /* Contributors Button */
 #contributorsBtn {
   position: fixed;
