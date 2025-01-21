@@ -1,16 +1,15 @@
 var tl = gsap.timeline()
 tl.from(".navbar-brand",{
-    delay:1,
+    delay:0.4,
     opacity:0,
     y:-30,
     duration:1,
 })
 tl.from(".nav-item",{
-    delay:1,
     opacity:0,
     y:-30,
     duration:1,
-    stagger:0.2
+    stagger:0.1
 })
 // Dark Mode Toggle
 document.addEventListener("DOMContentLoaded", function () {
