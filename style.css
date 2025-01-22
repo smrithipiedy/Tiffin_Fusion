@@ -1812,7 +1812,6 @@ footer {
   width: 280px; /* Default width */
   height: auto; /* Maintain aspect ratio */
   object-fit: contain;
-  z-index: 1; /* Ensure they stay behind text and form */
   transition: all 0.3s ease; /* Smooth transitions for resizing */
 }
 
@@ -1835,7 +1834,6 @@ footer {
 .footer-section.newsletter p,
 .footer-section.newsletter form {
   position: relative;
-  z-index: 2; /* Ensure content stays above images */
 }
 
 /* Responsive Design: For screens below 720px */
