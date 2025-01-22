@@ -234,22 +234,3 @@ h2 {
 .admin-btn:hover {
   background-color: #555;
 }
-
-.input-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.password-toggle {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #666;
-  cursor: pointer;
-}
-
-.password-toggle:hover {
-  color: #333;
-}
