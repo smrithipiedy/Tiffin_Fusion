@@ -21,6 +21,7 @@ const addmenuItem = async (req,res) => {
     newMenu.name = name
     newMenu.price = price
     newMenu.image = uploaded_url
+    if (size) newMenu.size = size
 
     await newMenu.save()
 
