@@ -84,7 +84,7 @@
     <script>
         document.getElementById('paymentForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            alert("Payment successful! Your cart is now empty.");
+            alert("Payment successful!");
             localStorage.removeItem('cart');
             window.location.href = "menu.html";
         });
