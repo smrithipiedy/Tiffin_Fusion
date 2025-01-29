@@ -1,3 +1,5 @@
+
+
 const REPO_OWNER = "saismrutiranjan18";
 const REPO_NAME = "Tiffin_Fusion";
 const GITHUB_TOKEN = ""; // Optional: Add your GitHub personal access token to avoid rate limits
@@ -7,18 +9,24 @@ async function fetchContributors() {
   const canvas = document.createElement("canvas"); // Create a hidden canvas for certificate generation
   const ctx = canvas.getContext("2d");
 
+
+
   try {
     // Fetch contributors from the GitHub API
     const response = await fetch(
-      `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors`,
+      `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors?per_page=100`,
       {
         headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {},
       }
     );
 
+    
+
     if (!response.ok) {
       const errorDetails = await response.text();
       throw new Error(`Failed to fetch contributors: ${errorDetails}`);
+
+
     }
     
     const contributors = await response.json();
@@ -33,6 +41,8 @@ async function fetchContributors() {
       img.src = contributor.avatar_url;
       img.alt = contributor.login;
 
+
+
       // GitHub username
       const name = document.createElement("h5");
       name.textContent = contributor.login;
@@ -42,6 +52,8 @@ async function fetchContributors() {
       githubLink.href = contributor.html_url;
       githubLink.target = "_blank";
       githubLink.textContent = "GitHub Profile";
+
+
 
       // Generate Certificate Button
       const button = document.createElement("button");
@@ -56,6 +68,8 @@ async function fetchContributors() {
       card.appendChild(githubLink);
       card.appendChild(button);
 
+
+
       // Append card to container
       contributorsContainer.appendChild(card);
     });
@@ -65,6 +79,8 @@ async function fetchContributors() {
       // Set canvas size
       canvas.width = 1600;
       canvas.height = 1000;
+
+
 
       // Background gradient
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
