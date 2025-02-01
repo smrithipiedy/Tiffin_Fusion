@@ -9,6 +9,6 @@ authRouter.post('/signup', registerUser);
 // Login Route
 authRouter.post('/login', loginUser);
 
-authRouter.post('/check-admin',checkAdmin ,loginUser)
+authRouter.post('/check-admin' ,loginUser)
 
 export {authRouter}
