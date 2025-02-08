@@ -79,6 +79,7 @@
     })
     .then((resp) => {
         console.log(resp.data);
+        localStorage.setItem('token',resp.data.token)
         window.location.href ="/adminindex.html"
     })
     .catch((err) => {
