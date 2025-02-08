@@ -14,6 +14,7 @@ Welcome to **Tiffin Fusion**, your one-stop solution for connecting with local t
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [Contact Us](#contact-us)
+- [Contributors](#contributors)
 - [License](#license)
 
 ---
