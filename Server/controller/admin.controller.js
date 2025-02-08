@@ -60,4 +60,9 @@ const addmealplan =async (req,res) => {
     return res.status(200).send({success:"meal plan created successfully", createdPlan:newMeal})
 }
 
-export {addmenuItem, addmealplan}
+const getmenuitem = async (req,res) => {
+    const fetchedmenuitem = await Menu.find()
+    return res.status(200).send({message:"fetched successfully", fetchedItems: fetchedmenuitem}) 
+}
+
+export {addmenuItem, addmealplan,getmenuitem}
