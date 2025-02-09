@@ -14,6 +14,7 @@ Welcome to **Tiffin Fusion**, your one-stop solution for connecting with local t
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [Contact Us](#contact-us)
+- [Contributors](#contributors)
 - [License](#license)
 
 ---
@@ -220,7 +221,14 @@ We’d love to hear from you! For inquiries, feedback, or support, reach out to 
 - **Email**: [info@tiffinfusion.com](mailto:info@tiffinfusion.com)
 
 ---
+## Contributors
+A huge shoutout to our wonderful contributors 
 
+<a href="https://github.com/saismrutiranjan18/Tiffin_Fusion/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=saismrutiranjan18/Tiffin_Fusion" />
+</a>
+
+---
 ## License
 
 This project is licensed under the **MIT License**. You can view the full license text in the `LICENSE` file in this repository.
