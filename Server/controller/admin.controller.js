@@ -65,4 +65,73 @@ const getmenuitem = async (req,res) => {
     return res.status(200).send({message:"fetched successfully", fetchedItems: fetchedmenuitem}) 
 }
 
-export {addmenuItem, addmealplan,getmenuitem}
+//for editing and deleteing meal plan
+
+//first
+const editMealPlan = async (req,res) => {
+    const { id, name, price, items } = req.body;
+    const filebuffer = req.file ? req.file.buffer : null;
+    
+    let updatedData = { name, price, items };
+    
+    if (filebuffer) {
+        const uploaded_url = await upload_on_cloudinary(filebuffer);
+        updatedData.image = uploaded_url;
+    }
+    
+    const updatedMealPlan = await Meal.findByIdAndUpdate(id, updatedData, { new: true });
+    
+    if (!updatedMealPlan) {
+        return res.status(400).send({ error: "Error while updating meal plan" });
+    }
+    
+    return res.status(200).send({ success: "Meal plan updated successfully", updatedMealPlan });
+};
+
+//sec
+const deleteMealPlan = async (req,res) => {
+    const { id } = req.body;
+    
+    const deletedMealPlan = await Meal.findByIdAndDelete(id);
+    
+    if (!deletedMealPlan) {
+        return res.status(400).send({ error: "Error while deleting meal plan" });
+    }
+    
+    return res.status(200).send({ success: "Meal plan deleted successfully" });
+};
+
+// editing and deleting menu item
+const editMenuItem = async (req,res) => {
+    const { id, name, price, size } = req.body;
+    const filebuffer = req.file ? req.file.buffer : null;
+    
+    let updatedData = { name, price, size };
+    
+    if (filebuffer) {
+        const uploaded_url = await upload_on_cloudinary(filebuffer);
+        updatedData.image = uploaded_url;
+    }
+    
+    const updatedMenuItem = await Menu.findByIdAndUpdate(id, updatedData, { new: true });
+    
+    if (!updatedMenuItem) {
+        return res.status(400).send({ error: "Error while updating menu item" });
+    }
+    
+    return res.status(200).send({ success: "Menu item updated successfully", updatedMenuItem });
+};
+
+const deleteMenuItem = async (req,res) => {
+    const { id } = req.body;
+    
+    const deletedMenuItem = await Menu.findByIdAndDelete(id);
+    
+    if (!deletedMenuItem) {
+        return res.status(400).send({ error: "Error while deleting menu item" });
+    }
+    
+    return res.status(200).send({ success: "Menu item deleted successfully" });
+};
+
+export {addmenuItem, addmealplan, getmenuitem, editMealPlan, deleteMealPlan, editMenuItem, deleteMenuItem}
