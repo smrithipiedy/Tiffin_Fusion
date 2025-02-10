@@ -14,6 +14,7 @@ Welcome to **Tiffin Fusion**, your one-stop solution for connecting with local t
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [Contact Us](#contact-us)
+- [Contributors](#contributors)
 - [License](#license)
 
 ---
@@ -172,27 +173,30 @@ We welcome contributions to the Tiffin Fusion project! Whether it's fixing bugs,
 
 2. **Clone Your Fork**  
    Clone your forked repository to your local machine:
-
-   ```bash
-   git clone https://github.com/your-username/tiffin-fusion.git
+   ```
+      git clone https://github.com/your-username/tiffin-fusion.git
 3. **Create a New Branch**  
 Create a new branch for the changes you want to make:
 
-```bash
-git checkout -b feature-name
+   ```
+      git checkout -b feature-name
+   ```
 4. **Make Your Changes**
 Implement the feature or fix the bug. Make sure to add tests if necessary and update the documentation as needed.
+
 5. **Commit Your Changes**
 Commit your changes with a clear and concise message:
-bash
-Copy code
-git add .
-git commit -m "Description of the changes you made"
+   ```
+      git add .
+      git commit -m "Description of the changes you made"
+   ```
+
 6. Push to Your Fork
 Push the changes to your forked repository:
-bash
-Copy code
-git push origin feature-name
+   ```
+      git push origin feature-name
+   ```
+
 7. **Submit a Pull Request**
 Go to the original repository on GitHub and click on "Pull Requests". Click the "New Pull Request" button and submit your changes.
 
@@ -217,7 +221,14 @@ We’d love to hear from you! For inquiries, feedback, or support, reach out to 
 - **Email**: [info@tiffinfusion.com](mailto:info@tiffinfusion.com)
 
 ---
+## Contributors
+A huge shoutout to our wonderful contributors 
 
+<a href="https://github.com/saismrutiranjan18/Tiffin_Fusion/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=saismrutiranjan18/Tiffin_Fusion" />
+</a>
+
+---
 ## License
 
 This project is licensed under the **MIT License**. You can view the full license text in the `LICENSE` file in this repository.
