@@ -65,6 +65,11 @@ const getmenuitem = async (req,res) => {
     return res.status(200).send({message:"fetched successfully", fetchedItems: fetchedmenuitem}) 
 }
 
+const getMealPlan = async (req,res) => {
+    const fetchedMealItem = await Meal.find()
+    return res.status(200).send({message:"fetched successfully", fetchedItem: fetchedMealItem})
+}
+
 //for editing and deleteing meal plan
 
 //first
@@ -134,4 +139,4 @@ const deleteMenuItem = async (req,res) => {
     return res.status(200).send({ success: "Menu item deleted successfully" });
 };
 
-export {addmenuItem, addmealplan, getmenuitem, editMealPlan, deleteMealPlan, editMenuItem, deleteMenuItem}
+export {addmenuItem, addmealplan, getmenuitem, getMealPlan, editMealPlan, deleteMealPlan, editMenuItem, deleteMenuItem}

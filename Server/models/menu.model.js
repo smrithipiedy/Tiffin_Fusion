@@ -27,11 +27,14 @@ const mealschema = new mongoose.Schema({
         required:true
     },
     items:{
-        type:[String],
+        type:String,
         required:true,
     },
     price:{
         type:Number
+    },
+    image:{
+        type:String
     }
 }, {timestamps:true})
 
