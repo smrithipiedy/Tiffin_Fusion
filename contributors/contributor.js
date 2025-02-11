@@ -4,68 +4,64 @@ const GITHUB_TOKEN = ""; // Optional: Add your GitHub personal access token to a
 
 async function fetchContributors() {
   const contributorsContainer = document.getElementById("contributors");
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
+  if (!contributorsContainer) {
+    console.error("Contributors container not found in the HTML!");
+    return;
+  }
 
   try {
-    // Fetch contributors
-    const contributorsResponse = await fetch(
+    const response = await fetch(
       `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors?per_page=100`,
-      {
-        headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {},
-      }
+      { headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {} }
     );
 
-    if (!contributorsResponse.ok) {
-      throw new Error(`Failed to fetch contributors: ${await contributorsResponse.text()}`);
-    }
+    if (!response.ok) throw new Error(`Failed to fetch contributors: ${await response.text()}`);
 
-    const contributors = await contributorsResponse.json();
+    const contributors = await response.json();
 
-    // Fetch merged PRs for each contributor
     for (const contributor of contributors) {
       const mergedPRCount = await getMergedPRCount(contributor.login);
 
-     // Create contributor card
-const card = document.createElement("div");
-card.className = "contributor-card";
+      // Contributor Card
+      const card = document.createElement("div");
+      card.className = "contributor-card";
 
-// Profile image
-const img = document.createElement("img");
-img.src = contributor.avatar_url;
-img.alt = contributor.login;
+      // Profile Image
+      const img = document.createElement("img");
+      img.src = contributor.avatar_url;
+      img.alt = contributor.login;
 
-// GitHub username
-const name = document.createElement("h5");
-name.textContent = contributor.login;
+      // Name
+      const name = document.createElement("h5");
+      name.textContent = contributor.login;
 
-// GitHub profile link
-const githubLink = document.createElement("a");
-githubLink.href = contributor.html_url;
-githubLink.target = "_blank";
-githubLink.textContent = "GitHub Profile";
+      // GitHub Link
+      const githubIcon = document.createElement("a");
+      githubIcon.href = contributor.html_url;
+      githubIcon.target = "_blank";
+      githubIcon.innerHTML = "<i class='fa-brands fa-github'></i>";
+      githubIcon.style.fontSize = "20px";
+      githubIcon.style.color = "black";
+      githubIcon.style.textDecoration = "none";
 
-// Generate Certificate Button
-const button = document.createElement("button");
-button.textContent = "Certificate";
-button.addEventListener("click", () => {
-  generateCertificate(contributor.login, contributor.avatar_url, mergedPRCount);
-});
+      // PR Count
+      const prCount = document.createElement("p");
+      prCount.textContent = `Merged PRs: ${mergedPRCount}`;
 
-// Merged PR count display
-const prCount = document.createElement("p");
-prCount.textContent = `Merged PRs: ${mergedPRCount}`;
+      // Certificate Button
+      const button = document.createElement("button");
+      button.textContent = "Certificate";
+      button.addEventListener("click", () => {
+        generateCertificate(contributor.login, contributor.avatar_url, mergedPRCount);
+      });
 
-// Append elements to card
-card.appendChild(img);
-card.appendChild(name);
-card.appendChild(githubLink);
-card.appendChild(button);  // Certificate button first
-card.appendChild(prCount); // Merged PRs below Certificate button
-
-// Append card to container
-contributorsContainer.appendChild(card);
-
+      // Append Elements
+      card.appendChild(img);
+      card.appendChild(name);
+      card.appendChild(githubIcon);
+      card.appendChild(prCount);  // पहले PR Count
+      card.appendChild(button);  // फिर Certificate button
+      contributorsContainer.appendChild(card);
     }
   } catch (error) {
     console.error("Error fetching contributors:", error);
@@ -73,19 +69,14 @@ contributorsContainer.appendChild(card);
   }
 }
 
-// Function to get merged PR count
 async function getMergedPRCount(username) {
   try {
     const response = await fetch(
       `https://api.github.com/search/issues?q=repo:${REPO_OWNER}/${REPO_NAME}+is:pr+author:${username}+is:merged`,
-      {
-        headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {},
-      }
+      { headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {} }
     );
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch merged PRs for ${username}: ${await response.text()}`);
-    }
+    if (!response.ok) throw new Error(`Failed to fetch merged PRs for ${username}: ${await response.text()}`);
 
     const data = await response.json();
     return data.total_count || 0;
@@ -95,55 +86,44 @@ async function getMergedPRCount(username) {
   }
 }
 
-// Function to generate a certificate
 function generateCertificate(username, avatarUrl, mergedPRCount) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = 1600;
   canvas.height = 1000;
 
-  // Background gradient
+  // Background Gradient
   const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
   gradient.addColorStop(0, "#f7e8a1");
   gradient.addColorStop(1, "#f2c94c");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Decorative border
+  // Border
   ctx.strokeStyle = "#d4af37";
   ctx.lineWidth = 20;
   ctx.strokeRect(50, 50, canvas.width - 100, canvas.height - 100);
 
-  // Certificate title
+  // Title
   ctx.fillStyle = "#5a4637";
   ctx.font = "bold 80px Georgia";
   ctx.textAlign = "center";
   ctx.fillText("Certificate of Contribution", canvas.width / 2, 150);
 
-  // Decorative underline
-  ctx.strokeStyle = "#5a4637";
-  ctx.lineWidth = 5;
-  ctx.beginPath();
-  ctx.moveTo(canvas.width / 2 - 400, 180);
-  ctx.lineTo(canvas.width / 2 + 400, 180);
-  ctx.stroke();
-
-  // Add user's GitHub image
+  // Profile Image
   const image = new Image();
   image.crossOrigin = "Anonymous";
   image.src = avatarUrl;
   image.onload = () => {
-    const imageSize = 200;
     ctx.save();
     ctx.beginPath();
-    ctx.arc(canvas.width / 2, 300, imageSize / 2, 0, Math.PI * 2);
+    ctx.arc(canvas.width / 2, 300, 100, 0, Math.PI * 2);
     ctx.clip();
-    ctx.drawImage(image, canvas.width / 2 - imageSize / 2, 200, imageSize, imageSize);
+    ctx.drawImage(image, canvas.width / 2 - 100, 200, 200, 200);
     ctx.restore();
 
-    // GitHub username under the image
+    // Username
     ctx.font = "bold 50px Arial";
-    ctx.fillStyle = "#5a4637";
     ctx.fillText(username, canvas.width / 2, 500);
 
    // Certificate content
