@@ -1879,3 +1879,8 @@ footer {
     padding: 30px 10px;
   }
 }
+
+/* footer tiffin plans */
+.payments i:hover{
+  transform: scale(1.2);
+}

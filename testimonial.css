@@ -421,3 +421,8 @@ footer {
 .footer-section.newsletter button:hover {
   background-color: #ff4500;
 }
+
+/* footer / tiffin plan */
+.payments i:hover{
+  transform: scale(1.2);
+}
