@@ -175,3 +175,8 @@ body {
         height: 380px; /* Highlighted: Adjusted height for better layout on mobile */
     }
 }
+
+/* footer */
+.payments i:hover{
+    transform: scale(1.2);
+}

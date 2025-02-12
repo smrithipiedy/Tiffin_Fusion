@@ -533,6 +533,9 @@ footer {
   background-color: #e9ecef;
   font-size: 14px;
 }
+.payments i:hover{
+  transform: scale(1.2);
+}
 
 .contributor-card {
   border: 2px solid #d4af37;
