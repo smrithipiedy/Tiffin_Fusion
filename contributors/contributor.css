@@ -259,7 +259,7 @@ body::before {
 }
 
 /* Contributor Profile Link */
-.contributor-card a {
+/* .contributor-card a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 15px;
@@ -275,13 +275,13 @@ body::before {
 .contributor-card a:hover {
   background: #e0b84c;
   transform: translateY(-3px);
-}
+} */
 
 /* Contributor Description */
 .contributor-card p {
   font-size: 0.95rem;
   color: #666;
-  margin-top: 8px;
+  margin-top: 10px;
   line-height: 1.4;
 }
 
@@ -532,6 +532,9 @@ footer {
   padding: 20px 0;
   background-color: #e9ecef;
   font-size: 14px;
+}
+.payments i:hover{
+  transform: scale(1.2);
 }
 
 .contributor-card {

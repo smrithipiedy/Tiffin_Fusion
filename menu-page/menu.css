@@ -584,6 +584,10 @@ footer {
   background-color: rgba(248, 249, 250, 1);
   font-size: 14px;
 }
+/*  footer */
+.payments i:hover{
+  transform: scale(1.2);
+}
 
 /* Add Button */
 .add-btn {

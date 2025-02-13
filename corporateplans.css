@@ -177,3 +177,8 @@ body {
         height: 380px;
     }
 }
+
+/* footer */
+.payments i:hover{
+    transform: scale(1.2);
+}
