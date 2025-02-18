@@ -7,6 +7,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background 0.3s, color 0.3s;
 }
 
 section {
@@ -33,6 +36,30 @@ body.dark {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #F44336;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .navbar {
+  background-color: #222222 !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+.dark-mode .navbar a {
+  color: #ffffff !important;
+}
+
+.dark-mode .btn-outline-dark {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Toggle Button Adjustments */
+.dark-mode #dark-mode-toggle i {
+  color: #ffffff;
 }
 
 
@@ -507,6 +534,36 @@ body.dark {
   background-color: #0056b3;
 }
 
+/* DARK MODE STYLES */
+.dark-mode .hero-section {
+  background-image: url("Utils/food-compressed.jpg"); /* Add a darker version of your background image */
+}
+
+.dark-mode .hero-overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
+}
+
+.dark-mode .hero-content {
+  background-color: rgba(20, 20, 20, 0.9); /* Dark mode background */
+}
+
+.dark-mode .hero-content h1 {
+  color: #ff4c4c; /* Soft red for contrast */
+}
+
+.dark-mode .hero-content p {
+  color: #bbb; /* Light gray text */
+}
+
+.dark-mode .hero-content .btn-primary {
+  background-color: #ff4c4c;
+  color: black;
+}
+
+.dark-mode .hero-content .btn-primary:hover {
+  background-color: #ff1a1a;
+}
+
 form {
   /* From Uiverse.io by Yaya12085 */
   .btn {
@@ -811,6 +868,46 @@ body {
 
 /* Menu Section Ends */
 
+/* Dark Mode Styles */
+.dark-mode .men-head,
+.dark-mode .menu-section,
+.dark-mode .back-clr {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .menu-item {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .menu-header h3,
+.dark-mode .menu-header .price,
+.dark-mode .menu-text h4 {
+  color: #f1f1f1;
+}
+
+.dark-mode .menu-text p {
+  color: #b0b0b0;
+}
+
+.dark-mode .full-menu-button {
+  background-color: #007bff;
+}
+
+.dark-mode .full-menu-button:hover {
+  background-color: #fc0635;
+}
+
+.dark-mode .back-btn {
+  background-color: #007bff;
+}
+
+.dark-mode .back-btn:hover {
+  background-color: #0056b3;
+}
+
 /* Service Section */
 .section-menu {
   background-color: white;
@@ -819,6 +916,16 @@ body {
 .section-menu h2 {
   font-size: 2.5rem;
   color: #333;
+}
+
+/* Dark mode */
+.dark-mode .section-menu {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .section-menu h2 {
+  color: #ffdd57;
 }
 
 /* Student Plan Section */
@@ -885,6 +992,10 @@ body {
   margin-top: 10px;
 }
 
+.dark-mode #menu p {
+  color: #e0e0e0;
+}
+
 .circle-container {
   text-align: center;
   margin-bottom: 30px;
@@ -903,6 +1014,15 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .circle {
+  background: linear-gradient(135deg, #ff4500, #ff6347);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .circle i {
+  color: #f8f9fa;
 }
 
 .circle:before {
@@ -942,6 +1062,37 @@ body {
 
 .circle:hover i {
   animation: rotateAndScale 0.5s ease-in-out forwards;
+}
+
+/* Dark mode for other sections */
+.dark-mode .section-student-plan {
+  background-color: #343a40;
+  color: #ffdd57;
+}
+
+.dark-mode .section-about {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .section-contact {
+  background-color: #222;
+  color: #ffdd57;
+}
+
+/* Dark mode button */
+.dark-mode-toggle {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #ff6347;
 }
 
 /* Keyframes for idle bounce */
@@ -1010,6 +1161,15 @@ body {
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #333;
+}
+
+.dark-mode .student-plan-section {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .section-title {
+  color: #ffdd57;
 }
 
 /* Student Plan Container */
@@ -1116,6 +1276,22 @@ body {
   font-size: 1.2rem;
 }
 
+.dark-mode .flip-card-front {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .flip-card-front h3 {
+  color: #ffdd57;
+}
+
+.dark-mode .flip-card-front p {
+  color: #e0e0e0;
+}
+
+.dark-mode .price {
+  color: #ff5733;
+}
+
 .flip-card-back {
   background-color: #e53935;
   color: white;
@@ -1135,6 +1311,10 @@ body {
   font-size: 1rem;
   text-align: center;
   color: white;
+}
+
+.dark-mode .flip-card-back {
+  background-color: #ff4500;
 }
 
 /* View More Button below the center card */
@@ -1157,6 +1337,15 @@ body {
 
 .view-more-button:hover {
   background-color: #d32f2f;
+}
+
+.dark-mode .view-more-button {
+  background-color: #ff5733;
+  color: #121212;
+}
+
+.dark-mode .view-more-button:hover {
+  background-color: #ff4500;
 }
 
 /* RESPONSIVE MEDIA QUERIES */
@@ -1453,6 +1642,76 @@ html {
   background: #e03e00; /* Darker shade on hover */
 }
 
+/* Dark Mode Styles for Who We Are Section */
+.dark-mode .who-we-are {
+  background-color: #121212; /* Dark background */
+  color: #eaeaea; /* Light text color */
+}
+
+.dark-mode .red-line {
+  background: #ff4081; /* Light red for contrast */
+}
+
+.dark-mode .who-we-are h2,
+.dark-mode .blog-section h2,
+.dark-mode .card h3 {
+  color: #fff; /* White color for headings */
+}
+
+.dark-mode .who-we-are p,
+.dark-mode .blog-section p,
+.dark-mode .card p {
+  color: #ccc; /* Light text color for paragraphs */
+}
+
+/* Blog Section */
+.dark-mode .blog-section {
+  grid-column: span 2;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.dark-mode .blog-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #fff; /* White color for blog title */
+}
+
+.dark-mode .blog-section p {
+  font-size: 1.2em;
+  color: #bbb; /* Lighter color for text */
+}
+
+/* Cards */
+.dark-mode .card {
+  background: #1e1e1e; /* Dark background for cards */
+  border: 1px solid #333; /* Dark border */
+  color: #eaeaea; /* Light text in cards */
+}
+
+.dark-mode .card:hover {
+  transform: scale(1.05);
+  background: #333; /* Darker background on hover */
+}
+
+.dark-mode .card h3 {
+  color: #fff; /* White color for card titles */
+}
+
+.dark-mode .card p {
+  color: #ccc; /* Lighter text for card paragraphs */
+}
+
+/* Button Styling */
+.dark-mode .read-more-button {
+  background: #ff4081; /* Light red button background for contrast */
+  color: #fff; /* Button text color */
+}
+
+.dark-mode .read-more-button:hover {
+  background: #e03e00; /* Darker red on hover */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .who-we-are {
@@ -1584,6 +1843,81 @@ html {
 .info-box a:hover {
   text-decoration: underline;
 }
+
+/* Dark Mode Styles for Contact Us Section */
+.dark-mode #contact-us {
+  background-image: url("Utils/contact us2.jpg"); /* Use a darker background image for dark mode */
+  background-size: cover;
+  background-position: center;
+  color: #eaeaea; /* Light text for dark mode */
+}
+
+.dark-mode .contact-header h2 {
+  color: #fff; /* White color for header text */
+  -webkit-text-stroke: 1px rgb(0, 0, 0); /* Black border for the header text */
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black; /* Enhanced text-shadow for better visibility */
+}
+
+.dark-mode .contact-container {
+  background-color: rgba(18, 18, 18, 0.8); /* Dark background with opacity */
+  border-radius: 10px;
+}
+
+.dark-mode .contact-form {
+  background-color: #333; /* Dark background for the form */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dark-mode .contact-form select,
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: #444; /* Dark input fields */
+  color: #fff; /* Light text for inputs */
+  border: 1px solid #555; /* Dark border for inputs */
+}
+
+.dark-mode .contact-form select:hover,
+.dark-mode .contact-form input:hover,
+.dark-mode .contact-form textarea:hover {
+  border-color: #e74c3c; /* Red border color on hover */
+}
+
+.dark-mode .contact-form select:focus,
+.dark-mode .contact-form input:focus,
+.dark-mode .contact-form textarea:focus {
+  outline: 2px solid #e74c3c; /* Red focus outline for input fields */
+}
+
+.dark-mode .contact-form button {
+  background-color: #e74c3c; /* Red background for the button */
+  color: #fff; /* White text for the button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dark-mode .contact-form button:hover {
+  background-color: #c0392b; /* Darker red background on hover */
+}
+
+.dark-mode .contact-info .info-box {
+  background-color: #444; /* Dark background for info boxes */
+  color: #ddd; /* Light text color in info boxes */
+}
+
+.dark-mode .contact-info .info-box h3 {
+  color: #fff; /* White color for info box headings */
+}
+
+.dark-mode .contact-info .info-box a {
+  color: #e74c3c; /* Red color for links */
+}
+
+.dark-mode .contact-info .info-box a:hover {
+  text-decoration: underline; /* Underline effect on hover */
+}
+
 
 /* Responsive Grid Layout */
 @media (max-width: 768px) {
@@ -1883,4 +2217,83 @@ footer {
 /* footer tiffin plans */
 .payments i:hover{
   transform: scale(1.2);
+}
+
+/* Dark Mode Styles */
+.dark-mode footer {
+  background-color: #343a40; /* Dark background for footer */
+  color: #adb5bd; /* Lighter text */
+}
+
+.dark-mode .footer-content {
+  background-color: #495057; /* Slightly darker content background */
+  border-radius: 8px;
+}
+
+.dark-mode .footer-section h2 {
+  color: #ffffff; /* White headings */
+}
+
+.dark-mode .footer-section ul li a {
+  color: #adb5bd; /* Lighter link color */
+}
+
+.dark-mode .footer-section ul li a:hover {
+  color: #ffffff; /* White on hover */
+}
+
+.dark-mode .social-icons li a {
+  color: #adb5bd; /* Lighter social icons */
+}
+
+.dark-mode .footer-section.newsletter {
+  background: linear-gradient(to right, #2c3e50, #34495e); /* Dark gradient for the newsletter */
+  color: #fff; /* White text in the newsletter section */
+}
+
+.dark-mode .footer-section.newsletter h2 {
+  color: #f39c12; /* Bright color for title */
+}
+
+.dark-mode .footer-section.newsletter p {
+  color: #ecf0f1; /* Lighter paragraph text */
+}
+
+.dark-mode .footer-section.newsletter .newsletter-form input {
+  border: 2px solid #555; /* Dark input borders */
+  background-color: #444; /* Dark background for inputs */
+  color: #fff; /* White text */
+}
+
+.dark-mode .footer-section.newsletter .newsletter-form input:focus {
+  border-color: #f39c12; /* Focus border color */
+}
+
+.dark-mode .footer-section.newsletter .subscribe-btn {
+  background: linear-gradient(90deg, #f39c12, #e67e22); /* Dark mode button */
+}
+
+.dark-mode .footer-section.newsletter .subscribe-btn:hover {
+  background: linear-gradient(90deg, #e67e22, #f39c12);
+}
+
+.dark-mode .footer-bottom {
+  background-color: #444; /* Dark background for the footer bottom */
+  color: #adb5bd; /* Lighter text */
+}
+
+.dark-mode .add-btn {
+  background-color: #2ecc71; /* Green button for dark mode */
+}
+
+.dark-mode .add-btn:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
+.dark-mode .add-btn:active {
+  background-color: #1e8449; /* Even darker green */
+}
+
+.dark-mode #contributorsBtn {
+  background-color: #34495e; /* Dark background for contributors button */
 }
