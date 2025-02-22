@@ -62,6 +62,18 @@ body.dark {
   color: #ffffff;
 }
 
+.dark-mode #menu .section-menu-h2 {
+  color: #ffffff;
+}
+
+.dark-mode #contact-us input::placeholder,
+.dark-mode #contact-us textarea::placeholder,
+.dark-mode #contact-us select option[disabled] {
+  color: white;
+  opacity: 1;
+}
+
+
 
 
 .checkbox {
