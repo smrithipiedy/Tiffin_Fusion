@@ -35,12 +35,12 @@
         <ul class="navbar-nav ms-auto">
           <!-- Home Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="index.html">Home</a>
+            <a class="nav-link mx-2" href="index.html#home">Home</a>
           </li>
 
           <!-- View Menu Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+            <a class="nav-link mx-2" href="index.html#menu-section">View Menu</a>
           </li>
 
           <!-- Meal Plan Dropdown -->
@@ -49,7 +49,7 @@
               Meal Plans
             </a>
             <ul class="dropdown-menu" id="mealPlanMenu">
-              <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+              <li><a class="dropdown-item" href="#student-plan">Student Plan</a></li>
               <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
               <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
             </ul>
@@ -57,12 +57,12 @@
 
           <!-- About Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#who-we-are">About</a>
+            <a class="nav-link mx-2" href="index.html#who-we-are">About</a>
           </li>
 
           <!-- Contact Us Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+            <a class="nav-link mx-2" href="index.html#contact-us">Contact Us</a>
           </li>
 
           <!-- Contributors Link -->
@@ -70,9 +70,19 @@
             <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
           </li>
 
+          
+
+          
+          <!-- Cart Icon in Navbar -->
+        <li class="nav-item">
+          <a href="./menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+            <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+          </a>
+        </li>
+
           <!-- Sign In Link -->
           <li class="nav-item">
-            <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+            <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
           </li>
         </ul>
       </div>
