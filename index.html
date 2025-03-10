@@ -14,6 +14,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="menu-toggle.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <script type="module">
+    import ReusableModal from './ReusableModal.js';
+
+    // Create a new modal instance
+    const cartModal = new ReusableModal("🥳 Item Added to the Cart");
+
+    // Function to add item to cart
+    function addToCart() {
+      console.log("Item added to cart!");
+      cartModal.show(); // Show the modal
+    }
+
+    // Attach event listener to a button
+    document.getElementById("add-to-cart-btn").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn1").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn2").addEventListener("click", addToCart);
+  </script>
 </head>
 
 <body>
@@ -413,7 +430,7 @@
               </div>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('../Utils/st-1.jpg','Healthy Meal Plan','Student Meal' , 200)">Add +</button>
+          <button id="add-to-cart-btn" class="add-btn" onclick="addToCart('../Utils/st-1.jpg','Healthy Meal Plan','Student Meal' , 200)" >Add +</button>
         </div>
 
         <!-- Plan 2 -->
@@ -436,7 +453,7 @@
               </div>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('../Utils/st-2.jpg','Classic Tiffin', 'Student Meal' ,150)">Add +</button>
+          <button id="add-to-cart-btn1" class="add-btn" onclick="addToCart('../Utils/st-2.jpg','Classic Tiffin', 'Student Meal' ,150)">Add +</button>
         </div>
 
         <!-- Plan 3 -->
@@ -459,7 +476,7 @@
               </div>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('../Utils/st-3.jpg','Budget Meal Plan','Student Meal' , 100)">Add +</button>
+          <button id="add-to-cart-btn2" class="add-btn" onclick="addToCart('../Utils/st-3.jpg','Budget Meal Plan','Student Meal' , 100)">Add +</button>
         </div>
 
         <!-- View More Button -->
