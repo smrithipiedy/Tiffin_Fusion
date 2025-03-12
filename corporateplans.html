@@ -11,7 +11,35 @@
   <link rel="stylesheet" href="./style.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <script type="module">
+    import ReusableModal from './ReusableModal.js';
 
+    // Create a new modal instance
+    const cartModal = new ReusableModal("🥳 Item Added to the Cart");
+
+    // Function to add item to cart
+    function addToCart() {
+      console.log("Item added to cart!");
+      cartModal.show(); // Show the modal
+    }
+
+    // Attach event listener to a button
+    document.getElementById("add-to-cart-btn").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn1").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn2").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn3").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn4").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn5").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn6").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn7").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn8").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn9").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn10").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn11").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn12").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn13").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn14").addEventListener("click", addToCart);
+  </script>
 </head>
 
 <body>
@@ -35,12 +63,12 @@
         <ul class="navbar-nav ms-auto">
           <!-- Home Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#home">Home</a>
+            <a class="nav-link mx-2" href="./index.html#home">Home</a>
           </li>
 
           <!-- View Menu Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+            <a class="nav-link mx-2" href="./index.html#menu-section">View Menu</a>
           </li>
 
           <!-- Meal Plan Dropdown -->
@@ -49,7 +77,7 @@
               Meal Plans
             </a>
             <ul class="dropdown-menu" id="mealPlanMenu">
-              <li><a class="dropdown-item" href="#student-plan">Student Plan</a></li>
+              <li><a class="dropdown-item" href="./index.html#student-plan">Student Plan</a></li>
               <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
               <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
             </ul>
@@ -57,12 +85,12 @@
 
           <!-- About Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#who-we-are">About</a>
+            <a class="nav-link mx-2" href="./index.html#who-we-are">About</a>
           </li>
 
           <!-- Contact Us Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+            <a class="nav-link mx-2" href="./index.html#contact-us">Contact Us</a>
           </li>
 
           <!-- Contributors Link -->
@@ -114,7 +142,7 @@
               <h4>Paneer Butter masala</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Paneer Butter Masala', 600)">Add +</button>
+          <button id="add-to-cart-btn" class="add-btn" onclick="addToCart('Paneer Butter Masala', 600)">Add +</button>
         </div>
         <!-- Additional cards -->
         <div class="daily-plan-card">
@@ -130,7 +158,7 @@
               <h4>Paneer Tikka Masala</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Paneer Tikka Masala', 580)">Add +</button>
+          <button id="add-to-cart-btn1" class="add-btn" onclick="addToCart('Paneer Tikka Masala', 580)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -145,7 +173,7 @@
               <h4>Palak Paneer</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Palak Paneer', 620)">Add +</button>
+          <button id="add-to-cart-btn2" class="add-btn" onclick="addToCart('Palak Paneer', 620)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -160,7 +188,7 @@
               <h4>Mix Veg</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Mix Veg', 650)">Add +</button>
+          <button id="add-to-cart-btn3" class="add-btn" onclick="addToCart('Mix Veg', 650)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -174,7 +202,7 @@
             <div class="card-back">
               <h4>Vegetable Rice</h4>
             </div>
-          </div><button class="add-btn" onclick="addToCart('Vegetable Rice', 590)">Add +</button>
+          </div><button id="add-to-cart-btn4" class="add-btn" onclick="addToCart('Vegetable Rice', 590)">Add +</button>
         </div>
       </div>
       
@@ -198,7 +226,7 @@
               <h4>Chicken Curry with Rice</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Chicken Curry with Naan/Roti', 750)">Add +</button>
+          <button id="add-to-cart-btn5" class="add-btn" onclick="addToCart('Chicken Curry with Naan/Roti', 750)">Add +</button>
         </div>
         <!-- Second card -->
         <div class="daily-plan-card">
@@ -214,7 +242,7 @@
               <h4>Grilled Fish with Veggies</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Mutton Curry with Appam', 800)">Add +</button>
+          <button id="add-to-cart-btn6" class="add-btn" onclick="addToCart('Mutton Curry with Appam', 800)">Add +</button>
         </div>
         <!-- Third card -->
         <div class="daily-plan-card">
@@ -230,7 +258,7 @@
               <h4>Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta', 850)">Add +</button>
+          <button id="add-to-cart-btn7" class="add-btn" onclick="addToCart('Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta', 850)">Add +</button>
         </div>
         <!-- Fourth card -->
         <div class="daily-plan-card">
@@ -247,7 +275,7 @@
               <h4>Grilled Fish with Quinoa and Roasted Veggies</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Grilled Fish with Quinoa and Roasted Veggies', 950)">Add +</button>
+          <button id="add-to-cart-btn8" class="add-btn" onclick="addToCart('Grilled Fish with Quinoa and Roasted Veggies', 950)">Add +</button>
         </div>
         <!-- Fifth card -->
         <div class="daily-plan-card">
@@ -262,7 +290,7 @@
             <div class="card-back">
               <h4>Chicken Curry with Rice</h4>
             </div>
-          </div><button class="add-btn" onclick="addToCart('Chicken Curry with Rice', 700)">Add +</button>
+          </div><button id="add-to-cart-btn9" class="add-btn" onclick="addToCart('Chicken Curry with Rice', 700)">Add +</button>
         </div>
         
       </div>
@@ -285,7 +313,7 @@
               <h4>Lentil Curry with Steamed Brown Rice and Vegan Raita</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Lentil Curry with Steamed Brown Rice and Vegan Raita', 550)">Add +</button>
+          <button id="add-to-cart-btn10" class="add-btn" onclick="addToCart('Lentil Curry with Steamed Brown Rice and Vegan Raita', 550)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -300,7 +328,7 @@
               <h4>Tofu Masala Curry with Coconut Rice</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Tofu Masala Curry with Coconut Rice', 580)">Add +</button>
+          <button id="add-to-cart-btn11" class="add-btn" onclick="addToCart('Tofu Masala Curry with Coconut Rice', 580)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -315,7 +343,7 @@
               <h4>Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies', 560)">Add +</button>
+          <button id="add-to-cart-btn12" class="add-btn" onclick="addToCart('Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies', 560)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -330,7 +358,7 @@
               <h4>Lentil & Spinach Soup with Quinoa</h4>
             </div>
           </div>
-          <button class="add-btn" onclick="addToCart('Lentil & Spinach Soup with Quinoa', 600)">Add +</button>
+          <button id="add-to-cart-btn13" class="add-btn" onclick="addToCart('Lentil & Spinach Soup with Quinoa', 600)">Add +</button>
         </div>
         <div class="daily-plan-card">
           <div class="card-inner">
@@ -345,7 +373,7 @@
               <h4>Chickpea and Vegetable Curry with Basmati Rice</h4>
             </div>
           </div>
-        <button class="add-btn" onclick="addToCart('Chickpea and Vegetable Curry with Basmati Rice', 570)">Add +</button>
+        <button id="add-to-cart-btn14" class="add-btn" onclick="addToCart('Chickpea and Vegetable Curry with Basmati Rice', 570)">Add +</button>
         </div>
       </div>
     </div>
@@ -364,11 +392,11 @@
       <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
         <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Fusion</h2>
         <ul style="list-style: none; padding: 0;">
-          <li><a href="#who-we-are" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
+          <li><a href="./index.html#who-we-are" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
           <li><a href="blog.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
           <li><a href="work_with_us/work-with-us.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
           <li><a href="investor-relations.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
-          <li><a href="#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
+          <li><a href="./index.html#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
         </ul>
       </div>
   

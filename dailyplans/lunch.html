@@ -8,7 +8,26 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <script type="module">
+    import ReusableModal from '../ReusableModal.js';
 
+    // Create a new modal instance
+    const cartModal = new ReusableModal("🥳 Item Added to the Cart");
+
+    // Function to add item to cart
+    function addToCart() {
+      console.log("Item added to cart!");
+      cartModal.show(); // Show the modal
+    }
+
+    // Attach event listener to a button
+    document.getElementById("add-to-cart-btn").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn1").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn2").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn3").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn4").addEventListener("click", addToCart);
+    document.getElementById("add-to-cart-btn5").addEventListener("click", addToCart);
+  </script>
   <link rel="stylesheet" href="dailyplans.css">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -277,7 +296,7 @@ body {
               <p> A hearty dish of yellow lentils cooked to perfection, tempered with ghee, cumin, garlic, and aromatic spices for a rich, flavorful finish.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch1.jpg','Dal Tadka','Lunch Meal', 190)">Add +</button>
+          <button id="add-to-cart-btn" class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch1.jpg','Dal Tadka','Lunch Meal', 190)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -295,7 +314,7 @@ body {
               <p> Fragrant basmati rice cooked with cumin seeds, offering a simple yet aromatic side dish to complement any curry.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch2.jpg','Jeera Rice','Lunch Meal', 200)">Add +</button>
+          <button id="add-to-cart-btn1" class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch2.jpg','Jeera Rice','Lunch Meal', 200)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -313,7 +332,7 @@ body {
               <p> A flavorful medley of assorted vegetables, cooked in a savory blend of spices for a wholesome and satisfying dish.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch3.jpg','Mix Veg','Lunch Meal', 220)">Add +</button>
+          <button id="add-to-cart-btn2" class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch3.jpg','Mix Veg','Lunch Meal', 220)">Add +</button>
         </div>
       </div>
   
@@ -334,7 +353,7 @@ body {
               <p> Soft, whole wheat flatbread, freshly cooked on a hot griddle, perfect for pairing with curries and gravies.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch4.jpg','Roti','Lunch Meal', 80)">Add +</button>
+          <button id="add-to-cart-btn3" class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch4.jpg','Roti','Lunch Meal', 80)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -352,7 +371,7 @@ body {
               <p> Soft paneer cubes simmered in a rich, creamy tomato-based gravy with butter and aromatic spices, offering a luxurious, flavorful experience.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch5.jpg','Paneer Butter Masala','Lunch Meal', 250)">Add +</button>
+          <button id="add-to-cart-btn4" class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch5.jpg','Paneer Butter Masala','Lunch Meal', 250)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -370,7 +389,7 @@ body {
               <p> A fresh and vibrant mix of crisp vegetables, tossed together with a light dressing for a healthy and refreshing accompaniment.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch6.jpg','Salad','Lunch Meal', 110)">Add +</button>
+          <button id="add-to-cart-btn5" class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch6.jpg','Salad','Lunch Meal', 110)">Add +</button>
         </div>
       </div>
     </section>
@@ -392,7 +411,7 @@ body {
             <li><a href="../index.html#who-we-are" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
             <li><a href="../blog.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
             <li><a href="../work_with_us/work-with-us.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
-            <li><a href="investor-relations.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
+            <li><a href="../investor-relations.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
             <li><a href="../index.html#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
           </ul>
         </div>
