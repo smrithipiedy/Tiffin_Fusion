@@ -1458,7 +1458,8 @@ body {
 }
 
 .view-more-button:hover {
-  background-color: #d32f2f;
+  background-color: #146eeb;
+  box-shadow: 0 4px 8px black;
 }
 
 .dark-mode .view-more-button {
@@ -1749,6 +1750,8 @@ html {
   transform: scale(1.05); /* Slightly enlarge the card on hover */
 }
 
+
+
 .read-more-button {
   display: inline-block; /* Inline block for button */
   margin-top: 10px; /* Space above button */
@@ -1761,7 +1764,8 @@ html {
 }
 
 .read-more-button:hover {
-  background: #e03e00; /* Darker shade on hover */
+  background: #45c305; /* Darker shade on hover */
+  box-shadow: 0 4px 8px black;
 }
 
 /* Dark Mode Styles for Who We Are Section */
