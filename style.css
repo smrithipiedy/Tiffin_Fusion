@@ -2131,7 +2131,7 @@ footer {
 .footer-section.newsletter {
   grid-column: span 4; /* span across all sections */
   padding: 30px;
-  background-color: #ffffff;
+  background: linear-gradient(to right, #dcebc8, #e8f3d6);
   background-image: url("https://media.istockphoto.com/id/666193858/photo/indian-vegetarian-office-or-school-lunch-box-or-tiffin-with-north-indian-or-maharashtrian.jpg?s=612x612&w=0&k=20&c=Ac-U7hY1leIuM97jLNPqzv7SX5DbZofu5p_pfUCgeJA=");
   text-align: center;
   margin-top: 20px;
@@ -2282,7 +2282,7 @@ footer {
 }
 
 .footer-section.newsletter {
-  background: linear-gradient(to right, #d4e9b9, #e8f3d6);
+  background: linear-gradient(to right, #dcebc8, #e8f3d6);
   position: relative;
   padding: 40px 20px;
   text-align: center;
